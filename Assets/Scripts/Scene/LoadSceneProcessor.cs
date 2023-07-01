@@ -26,9 +26,9 @@ namespace Scenes
             _loadAction = () =>
             {
                 var objects = SceneManager.GetActiveScene().GetRootGameObjects();
-                var handler = objects.First(o => o.GetComponent<ISceneLoadHandler<T>>() != null);
+                var handler = objects.First(o => o.GetComponentInChildren<ISceneLoadHandler<T>>() != null);
 
-                handler.GetComponent<ISceneLoadHandler<T>>().OnSceneLoad(argument);
+                handler.GetComponentInChildren<ISceneLoadHandler<T>>().OnSceneLoad(argument);
             };
         }
 

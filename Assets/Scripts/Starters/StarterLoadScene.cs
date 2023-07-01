@@ -7,6 +7,11 @@ namespace Starters
     {
         private string _sceneToLoad;
 
+        private void Awake()
+        {
+            LoadSceneProcessor.Instance.InvokeLoadAction();
+        }
+
         private async void Start()
         {
             await Initialize();
@@ -17,9 +22,11 @@ namespace Starters
             await Task.Yield();
         }
 
-        public void OnSceneLoad(string argument)
+        public override void OnSceneLoad(string argument)
         {
             _sceneToLoad = argument;
+
+            UnityEngine.Debug.Log(argument);
         }
     }
 }

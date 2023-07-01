@@ -7,6 +7,7 @@ namespace Starters
     {
         protected Transform parent;
 
+        public virtual void OnSceneLoad(string argument) { }
         protected abstract Task Initialize();
 
         protected void DestroyStarter()
