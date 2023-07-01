@@ -21,7 +21,7 @@ namespace Settings
             if (_settings.ContainsKey(type))
                 return (T)_settings[type];
 
-            _settings.Add(type, (T)Resources.Load(string.Format(PATH, nameof(T))));
+            _settings.Add(type, (T)Resources.Load(string.Format(PATH, type.Name)));
 
             return (T)_settings[type];
         }
