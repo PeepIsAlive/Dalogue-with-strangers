@@ -4,7 +4,7 @@ namespace Live2D
 {
     public sealed class CameraFollow : MonoBehaviour
     {
-        private const float END_POSITION_X = 6.55f;
+        private const float END_POSITION_X = 6.50f;
 
         private void FixedUpdate()
         {
