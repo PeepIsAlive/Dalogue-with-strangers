@@ -15,7 +15,6 @@ MonoBehaviour:
   _backgrounds:
   - {fileID: 21300000, guid: 5bb80426b00b3c344bdc690604719de1, type: 3}
   - {fileID: 21300000, guid: a58b8afe8b450084c9f85b0caade6e4f, type: 3}
-  - {fileID: 21300000, guid: 28fa3d55592ede0439b8d3cf82dae29f, type: 3}
   - {fileID: 21300000, guid: 3f12f338dc069274c83e603e2303f32e, type: 3}
   - {fileID: 21300000, guid: 6733af1a9b09fe54b9522474ea36a1ea, type: 3}
   - {fileID: 21300000, guid: e4ef6c6dcff3c5c4999afbe280bf2a0e, type: 3}
@@ -42,7 +41,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 7fb05d7e79b7a994682e331a38a1e0a0, type: 3}
   - {fileID: 21300000, guid: b9ea8d55e9996f845a4a0d7cb8e52fc7, type: 3}
   - {fileID: 21300000, guid: 10c4f690bcc531644b506237238de765, type: 3}
-  - {fileID: 21300000, guid: c54353420a54068429bc679f0d635c00, type: 3}
   - {fileID: 21300000, guid: 99acd6310be682f498b8660b7a0dd956, type: 3}
   - {fileID: 21300000, guid: 3046622dd921ea141bb769674c5a797d, type: 3}
   - {fileID: 21300000, guid: 3b25a295675fc3b45b0c73bc8ae54360, type: 3}
