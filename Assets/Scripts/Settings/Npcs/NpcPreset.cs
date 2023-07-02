@@ -7,6 +7,7 @@ namespace Settings
     public sealed class NpcPreset : Preset
     {
         [field: SerializeField] public NpcType Type { get; private set; }
+        [field: SerializeField] public GameObject Prefab { get; private set; }
         [field: SerializeField] public Sprite Background { get; private set; }
     }
 }

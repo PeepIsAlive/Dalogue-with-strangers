@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49508365b6b93764789b892f6983ac06, type: 3}
+  m_Name: EpsilonPreset
+  m_EditorClassIdentifier: 
+  <Id>k__BackingField: b9d54cf2-8bfb-47a7-8603-799190ae1df7
+  <Type>k__BackingField: 1
+  <Prefab>k__BackingField: {fileID: 8653127006217331952, guid: 2fd5b4c42dbbd764daf90139b65e86d3, type: 3}
+  <Background>k__BackingField: {fileID: 21300000, guid: 4d81c4a0e8473ca4f90b43e1b77a5b4e, type: 3}
