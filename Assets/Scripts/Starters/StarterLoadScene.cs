@@ -1,6 +1,10 @@
+using UnityEngine.SceneManagement;
 using System.Threading.Tasks;
 using UnityEngine;
 using Settings;
+using Modules;
+using Scenes;
+using Core;
 
 namespace Starters
 {
@@ -22,7 +26,30 @@ namespace Starters
 
         protected override async Task Initialize()
         {
-            await Task.Yield();
+            var presetId = string.Empty;
+
+            if (SaveDataManager.HasSave(SaveDataManager.NPC_PRESET_KEY))
+            {
+                SaveDataManager.LoadSave<string>(SaveDataManager.NPC_PRESET_KEY, id =>
+                {
+                    presetId = id;
+                });
+            }
+
+            if (string.IsNullOrEmpty(presetId))
+                presetId = SettingsProvider.Get<NpcCommonSettings>().GetPreset(NpcType.Natori).Id;
+
+            await LoadMainScene(presetId);
+        }
+
+        private async Task LoadMainScene(string presetId)
+        {
+            var operation = Main.LoadScene(presetId);
+            operation.allowSceneActivation = false;
+
+            await Task.Delay(5000);
+
+            operation.allowSceneActivation = true;
         }
     }
 }

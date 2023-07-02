@@ -14,5 +14,10 @@ namespace Settings
         {
             return _presets.First(x => x.Type == type);
         }
+
+        public NpcPreset GetPreset(string id)
+        {
+            return _presets.First(x => x.Id == id);
+        }
     }
 }
