@@ -7,7 +7,6 @@ namespace Starters
     public sealed class StarterLoadScene : Starter
     {
         [SerializeField] private SpriteRenderer _background;
-
         private BackgroundsSettings _settings;
 
         private void Awake()
