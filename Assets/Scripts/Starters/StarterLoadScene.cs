@@ -37,7 +37,7 @@ namespace Starters
             }
 
             if (string.IsNullOrEmpty(presetId))
-                presetId = SettingsProvider.Get<NpcCommonSettings>().GetPreset(NpcType.Natori).Id;
+                presetId = SettingsProvider.Get<NpcCommonSettings>().GetPreset(NpcType.Epsilon).Id;
 
             await LoadMainScene(presetId);
         }
