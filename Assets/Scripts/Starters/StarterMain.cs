@@ -6,7 +6,7 @@ using Scenes;
 
 namespace Starters
 {
-    public class StarterMain : Starter, ISceneLoadHandler<string>
+    public sealed class StarterMain : Starter, ISceneLoadHandler<string>
     {
         [SerializeField] private Image _sceneBackground;
 
