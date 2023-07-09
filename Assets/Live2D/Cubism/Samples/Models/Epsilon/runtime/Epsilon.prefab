@@ -61,7 +61,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _childDrawableRenderers:
-  - {fileID: 0}
+  - {fileID: 4262418890672393816}
   _isOverwrittenPartMultiplyColors: 0
   _isOverwrittenPartScreenColors: 0
   _multiplyColor: {r: 1, g: 1, b: 1, a: 1}
@@ -1130,9 +1130,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _childDrawableRenderers:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 2883900767733668634}
+  - {fileID: 4074534140281747917}
+  - {fileID: 6777680531836051479}
   _isOverwrittenPartMultiplyColors: 0
   _isOverwrittenPartScreenColors: 0
   _multiplyColor: {r: 1, g: 1, b: 1, a: 1}
@@ -1273,8 +1273,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _childDrawableRenderers:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 5790306610589155479}
+  - {fileID: 689841519291960620}
   _isOverwrittenPartMultiplyColors: 0
   _isOverwrittenPartScreenColors: 0
   _multiplyColor: {r: 1, g: 1, b: 1, a: 1}
@@ -1354,9 +1354,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _childDrawableRenderers:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 4160489016577045101}
+  - {fileID: 4563221627897066072}
+  - {fileID: 9133361749863746279}
   _isOverwrittenPartMultiplyColors: 0
   _isOverwrittenPartScreenColors: 0
   _multiplyColor: {r: 1, g: 1, b: 1, a: 1}
@@ -3047,11 +3047,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _childDrawableRenderers:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 3254158620508984352}
+  - {fileID: 3071068150587443189}
+  - {fileID: 3424743992999601403}
+  - {fileID: 890552488800050776}
+  - {fileID: 7595380034092829606}
   _isOverwrittenPartMultiplyColors: 0
   _isOverwrittenPartScreenColors: 0
   _multiplyColor: {r: 1, g: 1, b: 1, a: 1}
@@ -3741,6 +3741,90 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: "\u7167\u308C"
   DisplayName: 
+--- !u!1 &2774741616278940114
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6571314356318917735}
+  - component: {fileID: 1377970015072231909}
+  m_Layer: 0
+  m_Name: bubble
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &6571314356318917735
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2774741616278940114}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.9, z: 0}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5692326750520772579}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &1377970015072231909
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2774741616278940114}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 37b931c485ab996488f694455cad2b54, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 1
+  m_DrawMode: 0
+  m_Size: {x: 12.60538, y: 4.21}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &2797522771321611693
 GameObject:
   m_ObjectHideFlags: 0
@@ -4634,12 +4718,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _childDrawableRenderers:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1132346161575068470}
+  - {fileID: 9041410034421495775}
+  - {fileID: 6691240629140371883}
+  - {fileID: 3847139576952516292}
+  - {fileID: 6141923680965019420}
+  - {fileID: 7614956323362142606}
   _isOverwrittenPartMultiplyColors: 0
   _isOverwrittenPartScreenColors: 0
   _multiplyColor: {r: 1, g: 1, b: 1, a: 1}
@@ -5085,7 +5169,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _childDrawableRenderers:
-  - {fileID: 0}
+  - {fileID: 5393238375985831008}
   _isOverwrittenPartMultiplyColors: 0
   _isOverwrittenPartScreenColors: 0
   _multiplyColor: {r: 1, g: 1, b: 1, a: 1}
@@ -6093,11 +6177,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _childDrawableRenderers:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1682185720789595085}
+  - {fileID: 8844406116763787602}
+  - {fileID: 3225166096082000105}
+  - {fileID: 4140528101381912566}
+  - {fileID: 2229051742500021664}
   _isOverwrittenPartMultiplyColors: 0
   _isOverwrittenPartScreenColors: 0
   _multiplyColor: {r: 1, g: 1, b: 1, a: 1}
@@ -6665,8 +6749,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _childDrawableRenderers:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 5391223079478557919}
+  - {fileID: 5991859189455618995}
   _isOverwrittenPartMultiplyColors: 0
   _isOverwrittenPartScreenColors: 0
   _multiplyColor: {r: 1, g: 1, b: 1, a: 1}
@@ -7478,7 +7562,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _childDrawableRenderers:
-  - {fileID: 0}
+  - {fileID: 5691101771142873858}
   _isOverwrittenPartMultiplyColors: 0
   _isOverwrittenPartScreenColors: 0
   _multiplyColor: {r: 1, g: 1, b: 1, a: 1}
@@ -7985,11 +8069,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _childDrawableRenderers:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 5836275062389171889}
+  - {fileID: 9102981525338901154}
+  - {fileID: 5275154071881401753}
+  - {fileID: 6610427677635294364}
+  - {fileID: 5158116157971569044}
   _isOverwrittenPartMultiplyColors: 0
   _isOverwrittenPartScreenColors: 0
   _multiplyColor: {r: 1, g: 1, b: 1, a: 1}
@@ -8923,13 +9007,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _childDrawableRenderers:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 4973540771698032275}
+  - {fileID: 5277477165887312782}
+  - {fileID: 5273076401845878042}
+  - {fileID: 1960783562282699314}
+  - {fileID: 3636110995631307876}
+  - {fileID: 6703412559818164415}
+  - {fileID: 2657328802475048107}
   _isOverwrittenPartMultiplyColors: 0
   _isOverwrittenPartScreenColors: 0
   _multiplyColor: {r: 1, g: 1, b: 1, a: 1}
@@ -9314,9 +9398,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _childDrawableRenderers:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 7658994669022523651}
+  - {fileID: 90703856806531355}
+  - {fileID: 2803068853392935941}
   _isOverwrittenPartMultiplyColors: 0
   _isOverwrittenPartScreenColors: 0
   _multiplyColor: {r: 1, g: 1, b: 1, a: 1}
@@ -9762,20 +9846,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _childDrawableRenderers:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 5566136517221326064}
+  - {fileID: 3716775369730392561}
+  - {fileID: 4809652518127623860}
+  - {fileID: 3965986443347830101}
+  - {fileID: 7338447845829961667}
+  - {fileID: 4276522208302554704}
+  - {fileID: 2385294948496642383}
+  - {fileID: 4901235049244218862}
+  - {fileID: 7983151212124956814}
+  - {fileID: 6092980750057628189}
+  - {fileID: 450302835538802634}
+  - {fileID: 907709487657430414}
+  - {fileID: 3614611075176233454}
+  - {fileID: 6486612605934738565}
   _isOverwrittenPartMultiplyColors: 0
   _isOverwrittenPartScreenColors: 0
   _multiplyColor: {r: 1, g: 1, b: 1, a: 1}
@@ -9855,7 +9939,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _childDrawableRenderers:
-  - {fileID: 0}
+  - {fileID: 5967685622171611830}
   _isOverwrittenPartMultiplyColors: 0
   _isOverwrittenPartScreenColors: 0
   _multiplyColor: {r: 1, g: 1, b: 1, a: 1}
@@ -10423,8 +10507,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _childDrawableRenderers:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 8096941895206476521}
+  - {fileID: 4284825020712531315}
   _isOverwrittenPartMultiplyColors: 0
   _isOverwrittenPartScreenColors: 0
   _multiplyColor: {r: 1, g: 1, b: 1, a: 1}
@@ -10626,8 +10710,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _childDrawableRenderers:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 4828066247831004231}
+  - {fileID: 6175383065082761905}
   _isOverwrittenPartMultiplyColors: 0
   _isOverwrittenPartScreenColors: 0
   _multiplyColor: {r: 1, g: 1, b: 1, a: 1}
@@ -10707,8 +10791,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _childDrawableRenderers:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 6866772679603812199}
+  - {fileID: 2572770970289985060}
   _isOverwrittenPartMultiplyColors: 0
   _isOverwrittenPartScreenColors: 0
   _multiplyColor: {r: 1, g: 1, b: 1, a: 1}
@@ -11564,6 +11648,7 @@ Transform:
   - {fileID: 4082896526436969536}
   - {fileID: 8946569546272709199}
   - {fileID: 3002850014039052411}
+  - {fileID: 6571314356318917735}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -11617,7 +11702,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Opacity: 1
-  _lastOpacity: 0
+  _lastOpacity: 1
   _isOverwrittenModelMultiplyColors: 0
   _isOverwrittenModelScreenColors: 0
   _modelMultiplyColor: {r: 0, g: 0, b: 0, a: 0}
@@ -12553,7 +12638,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _childDrawableRenderers:
-  - {fileID: 0}
+  - {fileID: 8280060348916096961}
   _isOverwrittenPartMultiplyColors: 0
   _isOverwrittenPartScreenColors: 0
   _multiplyColor: {r: 1, g: 1, b: 1, a: 1}
