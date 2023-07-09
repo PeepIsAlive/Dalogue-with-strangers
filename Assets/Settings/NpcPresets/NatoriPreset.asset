@@ -15,5 +15,6 @@ MonoBehaviour:
   <Id>k__BackingField: baf7fadb-6638-4b71-8c12-d7b9f4823848
   <Type>k__BackingField: 0
   <Background>k__BackingField: {fileID: 21300000, guid: 3b25a295675fc3b45b0c73bc8ae54360, type: 3}
+  <BackgroundColor>k__BackingField: {r: 0.08235294, g: 0.13333334, b: 0.32156864, a: 0}
   <Prefabs>k__BackingField:
   - {fileID: 1505353683476866, guid: 75ea643df7851af4b939424b7eb7e8f2, type: 3}
