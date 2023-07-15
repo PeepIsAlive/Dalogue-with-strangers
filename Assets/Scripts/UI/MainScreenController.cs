@@ -1,13 +1,14 @@
-using UnityEngine.UI;
 using UnityEngine;
+using UI.Views;
 
 namespace UI.Controllers
 {
     public sealed class MainScreenController : MonoBehaviour
     {
         [Header("Buttons")]
-        [SerializeField] private Button _menuButton;
-        [SerializeField] private Button _changeNpcButton;
+        [SerializeField] private ImageButtonView _sendButton;
+        [SerializeField] private ImageButtonView _menuButton;
+        [SerializeField] private ImageButtonView _changeNpcButton;
 
         private void OnMenuButtonClick()
         {
@@ -21,14 +22,12 @@ namespace UI.Controllers
 
         private void Start()
         {
-            _menuButton?.onClick.AddListener(OnMenuButtonClick);
-            _changeNpcButton?.onClick.AddListener(OnChangeNpcButtonClick);
+
         }
 
         private void OnDestroy()
         {
-            _menuButton?.onClick?.RemoveListener(OnMenuButtonClick);
-            _changeNpcButton?.onClick?.RemoveListener(OnChangeNpcButtonClick);
+
         }
     }
 }
