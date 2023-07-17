@@ -12,5 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9713e6072c4854347a9851303abd67d3, type: 3}
   m_Name: PrefabsSet
   m_EditorClassIdentifier: 
-  <Popups>k__BackingField: []
-  <Buttons>k__BackingField: []
+  <Popups>k__BackingField:
+  - {fileID: 8774614994096176332, guid: 2f4b221a27af8c2458f6080de628b01c, type: 3}
+  <Buttons>k__BackingField:
+  - {fileID: 571556293686589619, guid: 7a545e7d041add746881c54e83de63e5, type: 3}
+  - {fileID: 6801700914006262481, guid: a368a0fee6921cc4eb0c94417e356ead, type: 3}

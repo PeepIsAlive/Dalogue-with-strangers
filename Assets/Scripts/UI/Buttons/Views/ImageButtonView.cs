@@ -9,7 +9,7 @@ namespace UI.Views
     
         public void SetIcon(Sprite icon)
         {
-            if (_image == null)
+            if (_image == null || icon == null)
                 return;
 
             _image.sprite = icon;

@@ -12,6 +12,6 @@ namespace UI
     {
         public string Title;
         public string Content;
-        public List<ButtonSettings> ButtonSettings;
+        public List<TextButtonSettings> ButtonSettings;
     }
 }

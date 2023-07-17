@@ -5,14 +5,14 @@ namespace UI.Views
 {
     public sealed class TextButtonView : MonoBehaviour
     {
-        [SerializeField] private TMP_Text _label;
+        [SerializeField] private TMP_Text _titleLabel;
 
         public void SetText(string text)
         {
-            if (_label == null)
+            if (_titleLabel == null)
                 return;
 
-            _label.text = text;
+            _titleLabel.text = text;
         }
     }
 }

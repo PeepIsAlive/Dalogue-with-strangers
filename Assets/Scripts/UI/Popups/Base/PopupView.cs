@@ -45,19 +45,19 @@ namespace UI
             DoHide();
         }
 
-        protected void InitializeButtons(List<ButtonSettings> buttonSettings)
+        protected void InitializeButtons<S>(List<S> buttonSettings) where S : ButtonSettings
         {
             var prefabsSet = SettingsProvider.Get<PrefabsSet>();
 
             foreach (var setting in buttonSettings)
             {
-                if (setting is TextButtonSettings)
+                if (setting is TextButtonSettings textButtonSettings)
                 {
                     var prefab = prefabsSet.Buttons.First(x => x.GetComponent<TextButtonController>() != null)
                         .GetComponent<TextButtonController>();
 
                     Instantiate(prefab, _buttonParent, false)
-                        .Setup((TextButtonSettings)setting);
+                        .Setup(textButtonSettings);
                 }
             }
         }

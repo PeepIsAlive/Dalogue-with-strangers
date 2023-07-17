@@ -5,7 +5,7 @@ using UI.Views;
 namespace UI.Controllers
 {
     [RequireComponent(typeof(ImageButtonView))]
-    public sealed class ImageViewController : ButtonController
+    public sealed class ImageButtonController : ButtonController
     {
         [Header("Controller")]
         [SerializeField] private ImageButtonView _view;
