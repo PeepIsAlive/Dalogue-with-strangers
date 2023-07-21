@@ -1,5 +1,6 @@
-using UnityEngine.SceneManagement;
+using UnityEngine.Localization.Settings;
 using System.Threading.Tasks;
+using Localization;
 using UnityEngine;
 using Settings;
 using Modules;
@@ -39,6 +40,7 @@ namespace Starters
             if (string.IsNullOrEmpty(presetId))
                 presetId = SettingsProvider.Get<NpcCommonSettings>().GetPreset(NpcType.Epsilon).Id;
 
+            await LocalizationProvider.Initialize(LocalizationSettings.ProjectLocale);
             await LoadMainScene(presetId);
         }
 

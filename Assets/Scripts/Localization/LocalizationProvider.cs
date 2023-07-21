@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using System.Linq;
 using UnityEngine;
+using Settings;
 
 namespace Localization
 {
@@ -17,7 +18,7 @@ namespace Localization
         static LocalizationProvider()
         {
             _localizationFiles = new Dictionary<string, LocalizationFileData>();
-            //_defaultLocalizedText = SettingsProvider.Get<LocalizationProviderSettings>().Default;
+            _defaultLocalizedText = SettingsProvider.Get<LocalizationProviderSettings>().DefaultAsset;
         }
 
         public static string GetText(string tag)

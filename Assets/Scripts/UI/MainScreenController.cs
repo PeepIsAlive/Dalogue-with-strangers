@@ -1,5 +1,6 @@
 using Application = Live_2D.Application;
 using System.Collections.Generic;
+using Localization;
 using UnityEngine;
 using UI.Settings;
 
@@ -32,7 +33,15 @@ namespace UI.Controllers
                     new TextButtonSettings
                     {
                         Title = "[test] Title button 2"
-                    }
+                    },
+                    new TextButtonSettings
+                    {
+                        Title = LocalizationProvider.GetText("button_title/cancel"),
+                        Action = () =>
+                        {
+                            Application.PopupViewManager.HideCurrentPopup();
+                        }
+                    },
                 }
             });
         }
