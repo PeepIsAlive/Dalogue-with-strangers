@@ -21,7 +21,7 @@ namespace UI
         [SerializeField] private RectTransform _middleParent;
         [SerializeField] private RectTransform _buttonParent;
 
-        private readonly float _durationTween = 0.4f;
+        private readonly float _durationTween = 0.3f;
         private bool _ignoreOverlayButtonAction;
 
         public virtual void Setup(T settings)
