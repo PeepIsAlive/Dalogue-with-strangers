@@ -18,6 +18,9 @@ namespace UI.Controllers
         [SerializeField] private ImageButtonController _menuButton;
         [SerializeField] private ImageButtonController _changeNpcButton;
 
+        [Header("Other")]
+        [SerializeField] private FadeController _fade;
+
         private NpcCommonSettings _npcCommonSettings;
 
         private void OnMenuButtonClick()
@@ -40,7 +43,12 @@ namespace UI.Controllers
                         Title = _npcCommonSettings.GetNpcName(type),
                         Action = () =>
                         {
-                            Main.LoadScene(_npcCommonSettings.GetPreset(type).Id);
+                            Application.PopupViewManager.HideCurrentPopup();
+
+                            _fade.FadeOn(() =>
+                            {
+                                Main.LoadScene(_npcCommonSettings.GetPreset(type).Id);
+                            });
                         }
                     }
                 );
@@ -71,7 +79,7 @@ namespace UI.Controllers
 
         }
 
-        private void Start()
+        private void Awake()
         {
             _npcCommonSettings = SettingsProvider.Get<NpcCommonSettings>();
 
@@ -87,6 +95,11 @@ namespace UI.Controllers
             {
                 Action = OnChangeNpcButtonClick
             });
+        }
+
+        private void Start()
+        {
+            _fade?.FadeOff();
         }
     }
 }
