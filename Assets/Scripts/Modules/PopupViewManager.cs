@@ -13,6 +13,9 @@ namespace UI
 
         public void Show<T>(T settings) where T : Popup
         {
+            if (_currentPopup != null)
+                return;
+
             _prefabsSet ??= SettingsProvider.Get<PrefabsSet>();
             _popupParent = GameObject.FindGameObjectWithTag("PopupParent").transform;
 
