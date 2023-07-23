@@ -22,6 +22,11 @@ MonoBehaviour:
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-en
+  - m_GUID: 740bd28ef271a4f4397b3126acfba700
+    m_Address: NpcCommon
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: 9fa1f7aa01524ae48a656fc46f24f081, type: 2}
   m_SchemaSet:

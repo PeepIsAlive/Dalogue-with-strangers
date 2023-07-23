@@ -14,17 +14,6 @@ namespace Starters
         [SerializeField] private SpriteRenderer _background;
         private BackgroundsSettings _settings;
 
-        private void Awake()
-        {
-            _settings = SettingsProvider.Get<BackgroundsSettings>();
-            _background.sprite = _settings.GetRandomBackground();
-        }
-
-        private async void Start()
-        {
-            await Initialize();
-        }
-
         protected override async Task Initialize()
         {
             var presetId = string.Empty;
@@ -52,6 +41,17 @@ namespace Starters
             await Task.Delay(8000);
 
             operation.allowSceneActivation = true;
+        }
+
+        private void Awake()
+        {
+            _settings = SettingsProvider.Get<BackgroundsSettings>();
+            _background.sprite = _settings.GetRandomBackground();
+        }
+
+        private async void Start()
+        {
+            await Initialize();
         }
     }
 }
