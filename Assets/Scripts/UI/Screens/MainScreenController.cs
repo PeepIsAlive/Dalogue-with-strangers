@@ -30,6 +30,7 @@ namespace UI.Controllers
 
         private void OnChangeNpcButtonClick()
         {
+            var currentNpcType = Application.CurrentNpcType;
             var buttonSettings = new List<TextButtonSettings>();
             var npcTypes = Enum.GetValues(typeof(NpcType)).OfType<NpcType>().ToList();
 
@@ -41,6 +42,7 @@ namespace UI.Controllers
                     new TextButtonSettings
                     {
                         Title = _npcCommonSettings.GetNpcName(type),
+                        Color = _npcCommonSettings.GetPreset(currentNpcType).NpcColor,
                         Action = () =>
                         {
                             Application.PopupViewManager.HideCurrentPopup();
@@ -59,6 +61,7 @@ namespace UI.Controllers
                 new TextButtonSettings
                 {
                     Title = LocalizationProvider.GetText("button_title/cancel"),
+                    Color = _npcCommonSettings.GetPreset(currentNpcType).NpcColor,
                     Action = () =>
                     {
                         Application.PopupViewManager.HideCurrentPopup();
@@ -68,6 +71,7 @@ namespace UI.Controllers
 
             Application.PopupViewManager.Show(new DefaultPopup
             {
+                Color = _npcCommonSettings.GetPreset(currentNpcType).NpcColor,
                 Title = LocalizationProvider.GetText("popup_title/change_npc"),
                 Content = LocalizationProvider.GetText("popup_content/change_npc"),
                 ButtonSettings = buttonSettings

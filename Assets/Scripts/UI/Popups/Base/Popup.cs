@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UnityEngine;
 using UI.Settings;
 
 namespace UI
@@ -12,6 +13,7 @@ namespace UI
     {
         public string Title;
         public string Content;
+        public Color? Color = null;
         public List<TextButtonSettings> ButtonSettings;
     }
 }

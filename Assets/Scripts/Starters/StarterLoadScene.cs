@@ -35,12 +35,12 @@ namespace Starters
 
         private async Task LoadMainScene(string presetId)
         {
-            var operation = Main.LoadScene(presetId);
-            operation.allowSceneActivation = false;
+            /*var operation =*/ Main.LoadScene(presetId);
+            //operation.allowSceneActivation = false;
 
-            await Task.Delay(8000);
+            //await Task.Delay(8000);
 
-            operation.allowSceneActivation = true;
+            //operation.allowSceneActivation = true;
         }
 
         private void Awake()

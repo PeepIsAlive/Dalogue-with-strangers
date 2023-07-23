@@ -45,7 +45,7 @@ namespace UI
             DoHide();
         }
 
-        protected void InitializeButtons<S>(List<S> buttonSettings) where S : ButtonSettings
+        protected void InitializeButtons<B>(List<B> buttonSettings, Color? color = null) where B : ButtonSettings
         {
             var prefabsSet = SettingsProvider.Get<PrefabsSet>();
 
