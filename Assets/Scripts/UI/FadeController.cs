@@ -8,7 +8,7 @@ namespace UI.Controllers
     public sealed class FadeController : MonoBehaviour
     {
         [SerializeField] private Image _image;
-        private const float _fadeDuration = 1.3f;
+        private const float _fadeDuration = 1.1f;
 
         public void FadeOff(Action onFadeOffAction = null)
         {
