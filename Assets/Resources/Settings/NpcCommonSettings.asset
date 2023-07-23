@@ -12,6 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 598249ab88009a34aac294260074963d, type: 3}
   m_Name: NpcCommonSettings
   m_EditorClassIdentifier: 
+  _localization:
+    <LocalizedAsset>k__BackingField:
+      m_TableReference:
+        m_TableCollectionName: GUID:d4cace88dbd53f4478b9825fa6327d62
+      m_TableEntryReference:
+        m_KeyId: 7341445120
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
   _presets:
   - {fileID: 11400000, guid: 6a3d3c5a6a31ac24498886ab717b6a98, type: 2}
   - {fileID: 11400000, guid: 7096a3a6477c54543a15c642b6d4ed3c, type: 2}
