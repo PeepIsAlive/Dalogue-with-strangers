@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0447596b1a67de49ba5720fda0bdabe, type: 3}
+  m_Name: Epsilon
+  m_EditorClassIdentifier: 
+  characterName: Epsilon
+  brain: workspaces/default-smat-ihmq2iakfrxqsrhhq/characters/galadriel
+  avatar: {fileID: 8653127006217331952, guid: 2fd5b4c42dbbd764daf90139b65e86d3, type: 3}
+  workspace: workspaces/default-smat-ihmq2iakfrxqsrhhq
+  currentScene: workspaces/default-smat-ihmq2iakfrxqsrhhq/characters/galadriel
+  ownerShip: 0
+  defaultThumbnail: {fileID: 0}
+  index: 0
+  triggers: []
+  scenes:
+  - workspaces/default-smat-ihmq2iakfrxqsrhhq/scenes/tokio
+  modelUri: https://storage.googleapis.com/inworld-ai-usercontent-prod/rpm_model/7b81cc75-819d-45f5-85c0-e9e4a0035f88.glb
+  posUri: https://storage.googleapis.com/inworld-ai-usercontent-prod/rpm_image/7b81cc75-819d-45f5-85c0-e9e4a0035f88_posture.jpg
+  previewImgUri: https://storage.googleapis.com/inworld-ai-usercontent-prod/rpm_image/7b81cc75-819d-45f5-85c0-e9e4a0035f88_portrait.jpg
+  characterID: 

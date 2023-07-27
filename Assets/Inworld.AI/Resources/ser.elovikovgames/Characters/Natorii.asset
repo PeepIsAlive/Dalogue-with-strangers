@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0447596b1a67de49ba5720fda0bdabe, type: 3}
+  m_Name: Natorii
+  m_EditorClassIdentifier: 
+  characterName: Natorii
+  brain: workspaces/default-smat-ihmq2iakfrxqsrhhq/characters/natori
+  avatar: {fileID: 1505353683476866, guid: 75ea643df7851af4b939424b7eb7e8f2, type: 3}
+  workspace: workspaces/default-smat-ihmq2iakfrxqsrhhq
+  currentScene: workspaces/default-smat-ihmq2iakfrxqsrhhq/characters/natori
+  ownerShip: 0
+  defaultThumbnail: {fileID: 0}
+  index: 0
+  triggers: []
+  scenes:
+  - workspaces/default-smat-ihmq2iakfrxqsrhhq/scenes/tokio
+  modelUri: 
+  posUri: 
+  previewImgUri: 
+  characterID: 
