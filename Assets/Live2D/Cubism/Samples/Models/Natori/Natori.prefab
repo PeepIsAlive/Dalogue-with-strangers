@@ -14958,6 +14958,8 @@ GameObject:
   - component: {fileID: 114683656935409580}
   - component: {fileID: 114843234341511188}
   - component: {fileID: 7859326558418979558}
+  - component: {fileID: -128426260180891017}
+  - component: {fileID: -3557818648351775771}
   m_Layer: 0
   m_Name: Natori
   m_TagString: Untagged
@@ -15142,7 +15144,7 @@ MonoBehaviour:
   CurrentExpressionIndex: -1
 --- !u!95 &95434638689952108
 Animator:
-  serializedVersion: 5
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -15159,7 +15161,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114683656935409580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15748,7 +15750,57 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d93c83bb8e08f04781599d1369adcc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <InworldCharacter>k__BackingField: {fileID: -3557818648351775771}
+  <InworldPlayer>k__BackingField: {fileID: -128426260180891017}
   <NpcType>k__BackingField: 0
+--- !u!114 &-128426260180891017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1505353683476866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a3c04b4a8b64806906db7079f20e4f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_GlobalChatCanvas: {fileID: 0}
+  m_ContentRT: {fileID: 0}
+  m_BubbleLeft: {fileID: 0}
+  m_BubbleRight: {fileID: 0}
+  m_InputField: {fileID: 0}
+--- !u!114 &-3557818648351775771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1505353683476866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb0f095b33582af489a930e6e32ba542, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Data: {fileID: 11400000, guid: 6ad4e8a7c07a7b243aee31cb449a8b06, type: 2}
+  m_Interaction: {fileID: 0}
+  m_CurrentAvatar: {fileID: 0}
+  m_SightAngle: 180
+  m_SightDistance: 10
+  m_SightRefreshRate: 0.25
+  m_logUtterances: 0
+  OnBeginSpeaking:
+    m_PersistentCalls:
+      m_Calls: []
+  OnFinishedSpeaking:
+    m_PersistentCalls:
+      m_Calls: []
+  OnCharacterSpeaks:
+    m_PersistentCalls:
+      m_Calls: []
+  OnGoalCompleted:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1506223167994700
 GameObject:
   m_ObjectHideFlags: 0

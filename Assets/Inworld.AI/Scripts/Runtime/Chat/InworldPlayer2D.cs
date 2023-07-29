@@ -11,6 +11,7 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+
 namespace Inworld.Sample
 {
     public class InworldPlayer2D : MonoBehaviour
@@ -44,6 +45,23 @@ namespace Inworld.Sample
             InworldController.Instance.CurrentCharacter.SendText(m_InputField.text);
             m_InputField.text = null;
         }
+
+        public void SetGlobalCanvas(GameObject canvas)
+        {
+            if (m_GlobalChatCanvas != null)
+                return;
+
+            m_GlobalChatCanvas = canvas;
+        }
+
+        public void SetInputField(TMP_InputField inputField)
+        {
+            if (m_InputField != null)
+                return;
+
+            m_InputField = inputField;
+        }
+
         public void RegisterCharacter(InworldCharacter character) => character.InteractionEvent.AddListener(OnInteractionStatus);
         
         #endregion

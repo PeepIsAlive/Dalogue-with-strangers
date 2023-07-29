@@ -7,12 +7,18 @@ using UI.Settings;
 using Settings;
 using System;
 using Scenes;
+using TMPro;
 using Core;
 
 namespace UI.Controllers
 {
     public sealed class MainScreenController : MonoBehaviour
     {
+        public event Action OnSendButtonClick;
+
+        [field:Header("For chat")]
+        [field:SerializeField] public TMP_InputField InputField { get; private set; }
+
         [Header("Buttons")]
         [SerializeField] private ImageButtonController _sendButton;
         [SerializeField] private ImageButtonController _menuButton;
@@ -78,12 +84,7 @@ namespace UI.Controllers
             });
         }
 
-        private void OnSendButtonClick()
-        {
-
-        }
-
-        private void Awake()
+        private void Start()
         {
             _npcCommonSettings = SettingsProvider.Get<NpcCommonSettings>();
 
@@ -99,11 +100,13 @@ namespace UI.Controllers
             {
                 Action = OnChangeNpcButtonClick
             });
+
+            _fade?.FadeOff();
         }
 
-        private void Start()
+        private void OnDestroy()
         {
-            _fade?.FadeOff();
+            OnSendButtonClick = null;
         }
     }
 }
