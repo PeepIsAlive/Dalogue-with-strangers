@@ -929,6 +929,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fade
       objectReference: {fileID: 0}
+    - target: {fileID: 348145778917723380, guid: d107ef75d5dd174479d923788d8d36d3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 348145778917723381, guid: d107ef75d5dd174479d923788d8d36d3, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1026,14 +1030,6 @@ PrefabInstance:
       propertyPath: _fade
       value: 
       objectReference: {fileID: 2054067704}
-    - target: {fileID: 4703632609679431874, guid: 30decace53410304eab08dc4dfe6c52f, type: 3}
-      propertyPath: _inputField
-      value: 
-      objectReference: {fileID: 4703632611685683208}
-    - target: {fileID: 4703632609679431874, guid: 30decace53410304eab08dc4dfe6c52f, type: 3}
-      propertyPath: <InputField>k__BackingField
-      value: 
-      objectReference: {fileID: 4703632611685683208}
     - target: {fileID: 4703632609679431875, guid: 30decace53410304eab08dc4dfe6c52f, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1122,39 +1118,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: MainScreen
       objectReference: {fileID: 0}
-    - target: {fileID: 4703632611095533232, guid: 30decace53410304eab08dc4dfe6c52f, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4703632611095533232, guid: 30decace53410304eab08dc4dfe6c52f, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4703632611095533232, guid: 30decace53410304eab08dc4dfe6c52f, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4703632611095533232, guid: 30decace53410304eab08dc4dfe6c52f, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4703632611095533232, guid: 30decace53410304eab08dc4dfe6c52f, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30decace53410304eab08dc4dfe6c52f, type: 3}
---- !u!114 &4703632611685683208 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4703632611095533247, guid: 30decace53410304eab08dc4dfe6c52f, type: 3}
-  m_PrefabInstance: {fileID: 4703632611685683207}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2da0c512f12947e489f739169773d7ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &4703632611685683209 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4703632609679431874, guid: 30decace53410304eab08dc4dfe6c52f, type: 3}

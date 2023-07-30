@@ -24,7 +24,7 @@ namespace Inworld.Util
         protected InworldCharacter Character { get; set; }
 
         #region Variables & Properties
-        [SerializeField] int m_HistorySize = 16;
+        [SerializeField] int m_HistorySize = 32;
         readonly LinkedList<HistoryItem> m_ChatHistory = new LinkedList<HistoryItem>();
         LimitedSizeDictionary<string, HistoryItem> m_ChatHistoryByUtteranceID;
         LimitedSizeDictionary<string, bool> m_PlayedUtterances;
