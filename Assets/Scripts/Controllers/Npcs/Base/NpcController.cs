@@ -3,9 +3,9 @@ using UnityEngine;
 using Inworld;
 using Core;
 
-namespace UI.Controllers
+namespace Controllers
 {
-    public sealed class NpcController : MonoBehaviour
+    public class NpcController : MonoBehaviour
     {
         [field: Header("Inworld data")]
         [field: SerializeField] public InworldCharacter InworldCharacter { get; private set; }

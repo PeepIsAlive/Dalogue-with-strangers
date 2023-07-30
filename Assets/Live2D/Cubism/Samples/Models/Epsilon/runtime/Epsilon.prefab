@@ -11845,7 +11845,7 @@ GameObject:
   - component: {fileID: 102608625753115057}
   - component: {fileID: 7622438039722802299}
   - component: {fileID: 7296828594258931114}
-  - component: {fileID: 3909233241542899529}
+  - component: {fileID: 5320777305119178474}
   - component: {fileID: 2080185166237929617}
   - component: {fileID: 7827602867422517837}
   m_Layer: 0
@@ -12189,7 +12189,7 @@ MonoBehaviour:
     Gravity: {x: 0, y: -1}
     Wind: {x: 0, y: 0}
     Fps: 0
---- !u!114 &3909233241542899529
+--- !u!114 &5320777305119178474
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -12198,7 +12198,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8653127006217331952}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d93c83bb8e08f04781599d1369adcc7, type: 3}
+  m_Script: {fileID: 11500000, guid: de79d63bf2907f3419797dc31e0c4249, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   <InworldCharacter>k__BackingField: {fileID: 7827602867422517837}

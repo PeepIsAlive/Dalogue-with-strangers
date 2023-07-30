@@ -5030,8 +5030,10 @@ GameObject:
   - component: {fileID: 33148298555157264}
   - component: {fileID: 23578920477315456}
   - component: {fileID: 114040249746250024}
+  - component: {fileID: 5149634719115224245}
+  - component: {fileID: 5281135034075825336}
   m_Layer: 0
-  m_Name: ArtMesh12
+  m_Name: ArtMesh12C2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5139,6 +5141,35 @@ MonoBehaviour:
   _renderOrder: 116
   _depthOffset: 0.00001
   _opacity: 1
+--- !u!58 &5149634719115224245
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1186389918141434}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.097, y: -0.015}
+  serializedVersion: 2
+  m_Radius: 0.03
+--- !u!114 &5281135034075825336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1186389918141434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates: []
 --- !u!1 &1186622386295772
 GameObject:
   m_ObjectHideFlags: 0
@@ -14957,7 +14988,7 @@ GameObject:
   - component: {fileID: 95434638689952108}
   - component: {fileID: 114683656935409580}
   - component: {fileID: 114843234341511188}
-  - component: {fileID: 7859326558418979558}
+  - component: {fileID: 1894194123717276394}
   - component: {fileID: -128426260180891017}
   - component: {fileID: -3557818648351775771}
   m_Layer: 0
@@ -15738,7 +15769,7 @@ MonoBehaviour:
     Gravity: {x: 0, y: -1}
     Wind: {x: 0, y: 0}
     Fps: 0
---- !u!114 &7859326558418979558
+--- !u!114 &1894194123717276394
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -15747,7 +15778,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1505353683476866}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d93c83bb8e08f04781599d1369adcc7, type: 3}
+  m_Script: {fileID: 11500000, guid: d882647f13102314eaa4c35dd204bdce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   <InworldCharacter>k__BackingField: {fileID: -3557818648351775771}

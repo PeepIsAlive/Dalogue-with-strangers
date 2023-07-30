@@ -2,7 +2,7 @@ using DG.Tweening;
 using UnityEngine;
 using TMPro;
 
-namespace UI.Controllers
+namespace Controllers
 {
     public sealed class BubbleController : MonoBehaviour
     {
