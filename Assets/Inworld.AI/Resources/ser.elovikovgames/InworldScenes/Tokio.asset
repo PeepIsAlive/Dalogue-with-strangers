@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Tokio
   m_EditorClassIdentifier: 
   fullName: workspaces/default-smat-ihmq2iakfrxqsrhhq/scenes/tokio
-  shortName: Tokio
+  shortName: Tokyo
   description: Evening city, an area with empty streets.
   characters:
   - workspaces/default-smat-ihmq2iakfrxqsrhhq/characters/natori
-  - workspaces/default-smat-ihmq2iakfrxqsrhhq/characters/galadriel
+  - workspaces/default-smat-ihmq2iakfrxqsrhhq/characters/epsilon
   triggers: []
   index: 0

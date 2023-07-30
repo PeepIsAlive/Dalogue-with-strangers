@@ -13,17 +13,17 @@ MonoBehaviour:
   m_Name: Epsilon
   m_EditorClassIdentifier: 
   characterName: Epsilon
-  brain: workspaces/default-smat-ihmq2iakfrxqsrhhq/characters/galadriel
+  brain: workspaces/default-smat-ihmq2iakfrxqsrhhq/characters/epsilon
   avatar: {fileID: 8653127006217331952, guid: 2fd5b4c42dbbd764daf90139b65e86d3, type: 3}
   workspace: workspaces/default-smat-ihmq2iakfrxqsrhhq
-  currentScene: workspaces/default-smat-ihmq2iakfrxqsrhhq/characters/galadriel
+  currentScene: workspaces/default-smat-ihmq2iakfrxqsrhhq/characters/epsilon
   ownerShip: 0
   defaultThumbnail: {fileID: 0}
   index: 0
   triggers: []
   scenes:
   - workspaces/default-smat-ihmq2iakfrxqsrhhq/scenes/tokio
-  modelUri: https://storage.googleapis.com/inworld-ai-usercontent-prod/rpm_model/7b81cc75-819d-45f5-85c0-e9e4a0035f88.glb
-  posUri: https://storage.googleapis.com/inworld-ai-usercontent-prod/rpm_image/7b81cc75-819d-45f5-85c0-e9e4a0035f88_posture.jpg
-  previewImgUri: https://storage.googleapis.com/inworld-ai-usercontent-prod/rpm_image/7b81cc75-819d-45f5-85c0-e9e4a0035f88_portrait.jpg
+  modelUri: 
+  posUri: 
+  previewImgUri: 
   characterID: 

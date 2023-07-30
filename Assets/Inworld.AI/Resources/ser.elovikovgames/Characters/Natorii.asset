@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0447596b1a67de49ba5720fda0bdabe, type: 3}
   m_Name: Natorii
   m_EditorClassIdentifier: 
-  characterName: Natorii
+  characterName: Natori
   brain: workspaces/default-smat-ihmq2iakfrxqsrhhq/characters/natori
   avatar: {fileID: 1505353683476866, guid: 75ea643df7851af4b939424b7eb7e8f2, type: 3}
   workspace: workspaces/default-smat-ihmq2iakfrxqsrhhq
@@ -26,4 +26,4 @@ MonoBehaviour:
   modelUri: 
   posUri: 
   previewImgUri: 
-  characterID: 
+  characterID: 520d7d3d-5d44-4c4a-aa29-9711b87a0813

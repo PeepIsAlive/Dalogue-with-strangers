@@ -11,13 +11,18 @@ namespace UI
         private Transform _popupParent;
         private PrefabsSet _prefabsSet;
 
+        public PopupViewManager()
+        {
+            _prefabsSet = SettingsProvider.Get<PrefabsSet>();
+        }
+
         public void Show<T>(T settings) where T : Popup
         {
             if (_currentPopup != null)
                 return;
-
-            _prefabsSet ??= SettingsProvider.Get<PrefabsSet>();
-            _popupParent = GameObject.FindGameObjectWithTag("PopupParent").transform;
+            
+            if (_popupParent == null)
+                _popupParent = GameObject.FindGameObjectWithTag("PopupParent").transform;
 
             var popupPrefab = _prefabsSet.Popups.First(x => x.GetComponent<PopupView<T>>() != null)
                 .GetComponent<PopupView<T>>();
