@@ -52,7 +52,7 @@ namespace Starters
                 InworldController.Player = npc;
 
                 _inworldController.CurrentCharacter = controller.InworldCharacter;
-                _mainScreenController.OnSendButtonClick += inworldPlayer.SendText;
+                _mainScreenController.OnSendButtonClickEvent += inworldPlayer.SendText;
             }
         }
 
