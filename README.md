@@ -1,1 +1,1 @@
-# Live-2D
+# Dialogue with strangers
