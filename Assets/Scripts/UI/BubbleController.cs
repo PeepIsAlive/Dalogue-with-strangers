@@ -18,7 +18,7 @@ namespace UI.Controllers
             _label.text += $"{text} ";
         }
 
-        private void ClearBubbleText(OnSendEvent data)
+        private void ClearBubbleText(OnMessageSendEvent data)
         {
             if (_label == null)
                 return;
@@ -39,12 +39,12 @@ namespace UI.Controllers
 
         private void Start()
         {
-            EventSystem.Subscribe<OnSendEvent>(ClearBubbleText);
+            EventSystem.Subscribe<OnMessageSendEvent>(ClearBubbleText);
         }
 
         private void OnDestroy()
         {
-            EventSystem.Unsubscribe<OnSendEvent>(ClearBubbleText);
+            EventSystem.Unsubscribe<OnMessageSendEvent>(ClearBubbleText);
         }
     }
 }

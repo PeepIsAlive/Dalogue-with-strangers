@@ -1,6 +1,5 @@
 using Application = Live_2D.Application;
 using System.Threading.Tasks;
-using Inworld.Sample;
 using UnityEngine.UI;
 using UI.Controllers;
 using System.Linq;
@@ -8,6 +7,7 @@ using UnityEngine;
 using Settings;
 using Inworld;
 using Scenes;
+using Modules;
 
 namespace Starters
 {
@@ -59,7 +59,14 @@ namespace Starters
         private async void Awake()
         {
             LoadSceneProcessor.Instance.InvokeLoadAction();
+            AnalyticsManager.OnStart();
+
             await Initialize();
+        }
+
+        private void OnDestroy()
+        {
+            AnalyticsManager.OnDestroy();
         }
     }
 }

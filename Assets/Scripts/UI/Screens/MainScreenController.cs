@@ -32,8 +32,14 @@ namespace UI.Controllers
 
         private void OnSendButtonClick()
         {
-            EventSystem.Send<OnSendEvent>();
+            EventSystem.Send(new OnMessageSendEvent
+            {
+                Message = InputField.text,
+                NpcType = Application.CurrentNpcType.ToString(),
+            });
+
             OnSendButtonClickEvent?.Invoke();
+            InputField.text = string.Empty;
         }
 
         private void OnChangeNpcButtonClick()
