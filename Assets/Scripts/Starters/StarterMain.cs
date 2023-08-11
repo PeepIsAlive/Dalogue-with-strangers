@@ -1,7 +1,5 @@
 using Application = Live_2D.Application;
-using Unity.Services.Analytics;
 using System.Threading.Tasks;
-using Unity.Services.Core;
 using UnityEngine.UI;
 using UI.Controllers;
 using System.Linq;
@@ -64,12 +62,6 @@ namespace Starters
             AnalyticsManager.OnStart();
 
             await Initialize();
-            await UnityServices.InitializeAsync();
-        }
-
-        private void Start()
-        {
-            AnalyticsService.Instance.StartDataCollection();
         }
 
         private void OnDestroy()
