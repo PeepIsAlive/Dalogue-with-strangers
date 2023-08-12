@@ -7,6 +7,7 @@ using System.Linq;
 using UnityEngine;
 using Settings;
 using Inworld;
+using Modules;
 using Scenes;
 
 namespace Starters
@@ -52,14 +53,21 @@ namespace Starters
                 InworldController.Player = npc;
 
                 _inworldController.CurrentCharacter = controller.InworldCharacter;
-                _mainScreenController.OnSendButtonClick += inworldPlayer.SendText;
+                _mainScreenController.OnSendButtonClickEvent += inworldPlayer.SendText;
             }
         }
 
         private async void Awake()
         {
             LoadSceneProcessor.Instance.InvokeLoadAction();
+            AnalyticsManager.OnStart();
+
             await Initialize();
+        }
+
+        private void OnDestroy()
+        {
+            AnalyticsManager.OnDestroy();
         }
     }
 }

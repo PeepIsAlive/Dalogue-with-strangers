@@ -1,5 +1,7 @@
 using UnityEngine.Localization.Settings;
+using Unity.Services.Analytics;
 using System.Threading.Tasks;
+using Unity.Services.Core;
 using Localization;
 using UnityEngine;
 using Settings;
@@ -43,14 +45,17 @@ namespace Starters
             operation.allowSceneActivation = true;
         }
 
-        private void Awake()
+        private async void Awake()
         {
             _settings = SettingsProvider.Get<BackgroundsSettings>();
             _background.sprite = _settings.GetRandomBackground();
+
+            await UnityServices.InitializeAsync();
         }
 
         private async void Start()
         {
+            AnalyticsService.Instance.StartDataCollection();
             await Initialize();
         }
     }

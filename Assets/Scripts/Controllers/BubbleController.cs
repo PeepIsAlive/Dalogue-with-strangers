@@ -1,5 +1,7 @@
 using DG.Tweening;
 using UnityEngine;
+using Modules;
+using Events;
 using TMPro;
 
 namespace Controllers
@@ -16,6 +18,14 @@ namespace Controllers
             _label.text += $"{text} ";
         }
 
+        private void ClearBubbleText(OnMessageSendEvent data)
+        {
+            if (_label == null)
+                return;
+
+            _label.text = string.Empty;
+        }
+
         private void OnEnable()
         {
             var startSize = transform.localScale;
@@ -25,6 +35,16 @@ namespace Controllers
             transform.DOScale(startSize, 0.15f)
                 .SetLink(gameObject)
                 .SetEase(Ease.Linear);
+        }
+
+        private void Start()
+        {
+            EventSystem.Subscribe<OnMessageSendEvent>(ClearBubbleText);
+        }
+
+        private void OnDestroy()
+        {
+            EventSystem.Unsubscribe<OnMessageSendEvent>(ClearBubbleText);
         }
     }
 }

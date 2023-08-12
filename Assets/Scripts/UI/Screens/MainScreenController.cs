@@ -5,8 +5,10 @@ using System.Linq;
 using UnityEngine;
 using UI.Settings;
 using Settings;
+using Modules;
 using System;
 using Scenes;
+using Events;
 using TMPro;
 using Core;
 
@@ -14,14 +16,13 @@ namespace UI.Controllers
 {
     public sealed class MainScreenController : MonoBehaviour
     {
-        public event Action OnSendButtonClick;
+        public event Action OnSendButtonClickEvent;
 
         [field:Header("For chat")]
         [field:SerializeField] public TMP_InputField InputField { get; private set; }
 
         [Header("Buttons")]
         [SerializeField] private ImageButtonController _sendButton;
-        [SerializeField] private ImageButtonController _menuButton;
         [SerializeField] private ImageButtonController _changeNpcButton;
 
         [Header("Other")]
@@ -29,9 +30,16 @@ namespace UI.Controllers
 
         private NpcCommonSettings _npcCommonSettings;
 
-        private void OnMenuButtonClick()
+        private void OnSendButtonClick()
         {
-            
+            EventSystem.Send(new OnMessageSendEvent
+            {
+                Message = InputField.text,
+                NpcType = Application.CurrentNpcType.ToString(),
+            });
+
+            OnSendButtonClickEvent?.Invoke();
+            InputField.text = string.Empty;
         }
 
         private void OnChangeNpcButtonClick()
@@ -53,7 +61,7 @@ namespace UI.Controllers
                         {
                             Application.PopupViewManager.HideCurrentPopup();
 
-                            _fade.FadeOn(() =>
+                            _fade?.FadeOn(() =>
                             {
                                 Main.LoadScene(_npcCommonSettings.GetPreset(type).Id);
                             });
@@ -92,21 +100,12 @@ namespace UI.Controllers
             {
                 Action = OnSendButtonClick
             });
-            _menuButton.Setup(new ImageButtonSettings
-            {
-                Action = OnMenuButtonClick
-            });
             _changeNpcButton.Setup(new ImageButtonSettings
             {
                 Action = OnChangeNpcButtonClick
             });
 
             _fade?.FadeOff();
-        }
-
-        private void OnDestroy()
-        {
-            OnSendButtonClick = null;
         }
     }
 }

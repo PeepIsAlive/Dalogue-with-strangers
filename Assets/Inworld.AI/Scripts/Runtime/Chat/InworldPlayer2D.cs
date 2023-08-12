@@ -43,7 +43,6 @@ namespace Inworld.Sample
                 return;
             }
             InworldController.Instance.CurrentCharacter.SendText(m_InputField.text);
-            m_InputField.text = null;
         }
 
         public void SetGlobalCanvas(GameObject canvas)
