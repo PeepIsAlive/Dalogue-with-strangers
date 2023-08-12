@@ -18,7 +18,7 @@ namespace Modules
 
         private static void OnMessageSend(OnMessageSendEvent data)
         {
-            Analytics.CustomEvent("SendMessage", new Dictionary<string, object>
+            Analytics.CustomEvent("sendMessage", new Dictionary<string, object>
             {
                 { "Message", data.Message },
                 { "NpcType", data.NpcType },
