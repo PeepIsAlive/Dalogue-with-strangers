@@ -1,7 +1,7 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace Extentions
+namespace Extensions
 {
 #if UNITY_EDITOR
     public sealed class ReadOnlyAttribute : PropertyAttribute { }

@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using System;
 
-namespace Extentions
+namespace Extensions
 {
-    public static class ListExtentions
+    public static class ListExtensions
     {
         public static T GetRandomElement<T>(this List<T> list)
         {

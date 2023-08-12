@@ -1,5 +1,5 @@
 using UnityEngine;
-using Extentions;
+using Extensions;
 using System;
 
 namespace Settings
