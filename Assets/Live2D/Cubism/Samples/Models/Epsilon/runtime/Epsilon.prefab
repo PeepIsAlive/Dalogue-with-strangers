@@ -12205,6 +12205,7 @@ MonoBehaviour:
   <InworldPlayer>k__BackingField: {fileID: 2080185166237929617}
   <NpcType>k__BackingField: 1
   _bubbleController: {fileID: 3117105460510337640}
+  _animator: {fileID: 102608625753115057}
 --- !u!114 &2080185166237929617
 MonoBehaviour:
   m_ObjectHideFlags: 0
