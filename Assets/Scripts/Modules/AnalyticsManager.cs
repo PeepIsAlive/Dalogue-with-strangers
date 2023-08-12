@@ -8,12 +8,16 @@ namespace Modules
     {
         public static void OnStart()
         {
+#if !UNITY_EDITOR
             EventSystem.Subscribe<OnMessageSendEvent>(OnMessageSend);
+#endif
         }
 
         public static void OnDestroy()
         {
+#if !UNITY_EDITOR
             EventSystem.Unsubscribe<OnMessageSendEvent>(OnMessageSend);
+#endif
         }
 
         private static void OnMessageSend(OnMessageSendEvent data)
