@@ -5026,11 +5026,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4626093181872118}
-  - component: {fileID: 114379377808136894}
   - component: {fileID: 33148298555157264}
   - component: {fileID: 23578920477315456}
+  - component: {fileID: 5069758633539242509}
+  - component: {fileID: 114379377808136894}
   - component: {fileID: 114040249746250024}
-  - component: {fileID: 5149634719115224245}
+  - component: {fileID: 1592423058036170986}
   - component: {fileID: 5281135034075825336}
   m_Layer: 0
   m_Name: ArtMesh12C2D
@@ -5054,19 +5055,6 @@ Transform:
   m_Father: {fileID: 4832940144827194}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114379377808136894
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1186389918141434}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6f4adbb68873874f8ea675c6a9adca3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _unmanagedIndex: 6
 --- !u!33 &33148298555157264
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -5117,6 +5105,45 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!61 &5069758633539242509
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1186389918141434}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.097, y: -0.016}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.055, y: 0.055}
+  m_EdgeRadius: 0
+--- !u!114 &114379377808136894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1186389918141434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6f4adbb68873874f8ea675c6a9adca3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _unmanagedIndex: 6
 --- !u!114 &114040249746250024
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5141,22 +5168,19 @@ MonoBehaviour:
   _renderOrder: 116
   _depthOffset: 0.00001
   _opacity: 1
---- !u!58 &5149634719115224245
-CircleCollider2D:
+--- !u!114 &1592423058036170986
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1186389918141434}
   m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.097, y: -0.015}
-  serializedVersion: 2
-  m_Radius: 0.03
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 608f58bf2d538a049b8028ef6392e99a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationType: 1
 --- !u!114 &5281135034075825336
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5169,7 +5193,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates: []
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1592423058036170986}
+          m_TargetAssemblyTypeName: Controllers.NatoriBodyPartController, Assembly-CSharp
+          m_MethodName: StartAnimation
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1186622386295772
 GameObject:
   m_ObjectHideFlags: 0
@@ -15785,6 +15825,9 @@ MonoBehaviour:
   <InworldPlayer>k__BackingField: {fileID: -128426260180891017}
   <NpcType>k__BackingField: 0
   _bubbleController: {fileID: 6836927211698878713}
+  _onClickEvent:
+    m_PersistentCalls:
+      m_Calls: []
   _animator: {fileID: 95434638689952108}
 --- !u!114 &-128426260180891017
 MonoBehaviour:

@@ -1,5 +1,8 @@
+using System;
+
 namespace Core.Animations
 {
+    [Serializable]
     public enum NatoriAnimationType
     {
         Greeting = 0,
