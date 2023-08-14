@@ -10,5 +10,6 @@ namespace Core.Animations
         AdjustGlasses = 2,
         No = 3,
         Bow = 4,
+        Idle = 5,
     }
 }
