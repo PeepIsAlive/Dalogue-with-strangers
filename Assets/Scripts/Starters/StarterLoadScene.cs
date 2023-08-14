@@ -47,6 +47,8 @@ namespace Starters
 
         private async void Awake()
         {
+            Application.targetFrameRate = 60;
+
             _settings = SettingsProvider.Get<BackgroundsSettings>();
             _background.sprite = _settings.GetRandomBackground();
 

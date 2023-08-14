@@ -17,7 +17,6 @@ namespace Starters
 
         private void Awake()
         {
-            Application.targetFrameRate = 60;
             parent = transform.parent;
         }
     }
