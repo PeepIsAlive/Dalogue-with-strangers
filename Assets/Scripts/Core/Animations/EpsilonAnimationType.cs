@@ -16,5 +16,6 @@ namespace Core.Animations
         GetAngry = 11,
         Cringe = 12,
         Shake = 13,
+        Idle = 14,
     }
 }

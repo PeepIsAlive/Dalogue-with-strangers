@@ -15046,7 +15046,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1505353683476866}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -2.3, z: 0}
+  m_LocalPosition: {x: 0, y: -2.6, z: 0}
   m_LocalScale: {x: 8, y: 8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -15825,9 +15825,6 @@ MonoBehaviour:
   <InworldPlayer>k__BackingField: {fileID: -128426260180891017}
   <NpcType>k__BackingField: 0
   _bubbleController: {fileID: 6836927211698878713}
-  _onClickEvent:
-    m_PersistentCalls:
-      m_Calls: []
   _animator: {fileID: 95434638689952108}
 --- !u!114 &-128426260180891017
 MonoBehaviour:
@@ -29804,8 +29801,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8470941674946429604}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.045, y: 0.05, z: 1}
+  m_LocalPosition: {x: 0, y: 0.01, z: 0}
+  m_LocalScale: {x: 0.055, y: 0.065, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7184427550592721612}
@@ -30004,19 +30001,19 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 100
+  m_fontSize: 85
   m_fontSizeBase: 96
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 90
-  m_fontSizeMax: 100
+  m_fontSizeMin: 70
+  m_fontSizeMax: 85
   m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
-  m_characterSpacing: -1
-  m_wordSpacing: -2
-  m_lineSpacing: -10
+  m_characterSpacing: -2
+  m_wordSpacing: -8
+  m_lineSpacing: -15
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
