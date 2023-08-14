@@ -11,7 +11,7 @@ namespace Controllers
         [field: SerializeField] public InworldCharacter InworldCharacter { get; private set; }
         [field: SerializeField] public InworldPlayer2D InworldPlayer { get; private set; }
 
-        [field:Header("Npc data")]
+        [field: Header("Npc data")]
         [field: SerializeField] public NpcType NpcType { get; private set; }
         
         [SerializeField] private BubbleController _bubbleController;
