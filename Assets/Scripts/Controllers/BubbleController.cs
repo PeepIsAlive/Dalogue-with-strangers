@@ -34,7 +34,11 @@ namespace Controllers
             transform.localScale = endSize;
             transform.DOScale(startSize, 0.15f)
                 .SetLink(gameObject)
-                .SetEase(Ease.Linear);
+                .SetEase(Ease.Linear)
+                .OnKill(() =>
+                {
+                    EventSystem.Send<OnStartDialogEvent>();
+                });
         }
 
         private void Start()

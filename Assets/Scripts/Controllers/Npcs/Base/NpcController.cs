@@ -31,13 +31,13 @@ namespace Controllers
                 _bubbleParent = _bubbleController.transform.parent;
         }
 
-        private void Start()
+        protected void Start()
         {
             InworldCharacter.OnCharacterSpeaks.AddListener((_, _) => EnableBubble());
             InworldCharacter.OnCharacterSpeaks.AddListener((_, text) => _bubbleController.AddText(text));
         }
 
-        private void OnDestroy()
+        protected void OnDestroy()
         {
             InworldCharacter.OnCharacterSpeaks.RemoveAllListeners();
         }

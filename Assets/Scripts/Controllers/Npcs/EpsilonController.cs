@@ -1,6 +1,7 @@
-using UnityEngine.Events;
 using Core.Animations;
 using UnityEngine;
+using Modules;
+using Events;
 using Utils;
 
 namespace Controllers
@@ -18,6 +19,23 @@ namespace Controllers
                 return;
 
             _animator.SetTrigger(AnimationUtils.GetAnimationName(type));
+        }
+
+        public void PlayWelcomeAnimation(OnStartDialogEvent data)
+        {
+            PlayAnimation(EpsilonAnimationType.Greeting);
+        }
+
+        new private void Start()
+        {
+            base.Start();
+            EventSystem.Subscribe<OnStartDialogEvent>(PlayWelcomeAnimation);
+        }
+
+        new private void OnDestroy()
+        {
+            base.OnDestroy();
+            EventSystem.Unsubscribe<OnStartDialogEvent>(PlayWelcomeAnimation);
         }
     }
 }
