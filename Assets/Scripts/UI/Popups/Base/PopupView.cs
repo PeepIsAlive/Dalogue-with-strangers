@@ -23,10 +23,12 @@ namespace UI
 
         private readonly float _durationTween = 0.3f;
         private bool _ignoreOverlayButtonAction;
+        private Vector3 _direction;
 
         public virtual void Setup(T settings)
         {
             _ignoreOverlayButtonAction = settings.IgnoreOverlayButtonAction;
+            _direction = settings.Direction;
         }
 
         public override void Show()
@@ -47,6 +49,9 @@ namespace UI
 
         protected void InitializeButtons<B>(List<B> buttonSettings, Color? color = null) where B : ButtonSettings
         {
+            if (buttonSettings == null)
+                return;
+
             var prefabsSet = SettingsProvider.Get<PrefabsSet>();
 
             foreach (var setting in buttonSettings)
@@ -66,7 +71,7 @@ namespace UI
         {
             _rootRect ??= gameObject.GetComponent<RectTransform>();
 
-            var startOffset = Vector3.down.normalized * Application.MainCanvasRect.sizeDelta.y;
+            var startOffset = GetDirection(_direction);
             var targetPosition = _rootRect.localPosition;
 
             if (Mathf.Abs(startOffset.sqrMagnitude) - Mathf.Abs(Vector2.zero.sqrMagnitude) > Mathf.Epsilon)
@@ -80,7 +85,7 @@ namespace UI
 
         private void DoHide()
         {
-            var targetPosition = Vector3.down.normalized * Application.MainCanvasRect.sizeDelta.y;
+            var targetPosition = GetDirection(_direction);
 
             if (Mathf.Abs(targetPosition.sqrMagnitude) - Mathf.Abs(Vector2.zero.sqrMagnitude) > Mathf.Epsilon)
             {
@@ -89,6 +94,16 @@ namespace UI
                     .SetEase(Ease.InBack)
                     .OnComplete(() => Destroy(gameObject));
             }
+        }
+
+        private Vector3 GetDirection(Vector3 direction)
+        {
+            var result = Vector3.down.normalized * Application.MainCanvasRect.sizeDelta.y;
+
+            if (direction == Vector3.left || direction == Vector3.right)
+                result = direction.normalized * Application.MainCanvasRect.sizeDelta.x;
+
+            return result;
         }
 
         private void AddListeners()

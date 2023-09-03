@@ -2,5 +2,7 @@
     { "tags": ["button_title", "cancel"], "topic": "Cancel" },
 
     { "tags": ["popup_title", "change_npc"], "topic": "Changing npcs" },
-    { "tags": ["popup_content", "change_npc"], "topic": "Choose the NPC you want to chat with?" }
+    { "tags": ["popup_content", "change_npc"], "topic": "Choose the NPC you want to chat with?" },
+
+    { "tags": ["popup_title", "menu"], "topic": "Menu" },
 ]

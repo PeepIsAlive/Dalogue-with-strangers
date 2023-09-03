@@ -6,6 +6,7 @@ namespace UI
 {
     public class Popup
     {
+        public Vector3 Direction;
         public bool IgnoreOverlayButtonAction;
     }
 

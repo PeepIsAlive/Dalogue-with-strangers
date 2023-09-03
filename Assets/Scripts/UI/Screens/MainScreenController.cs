@@ -23,6 +23,7 @@ namespace UI.Controllers
 
         [Header("Buttons")]
         [SerializeField] private ImageButtonController _sendButton;
+        [SerializeField] private ImageButtonController _menuButton;
         [SerializeField] private ImageButtonController _changeNpcButton;
 
         [Header("Other")]
@@ -40,6 +41,19 @@ namespace UI.Controllers
 
             OnSendButtonClickEvent?.Invoke();
             InputField.text = string.Empty;
+        }
+
+        private void OnMenuButtonClick()
+        {
+            var currentNpcType = Application.CurrentNpcType;
+
+            Application.PopupViewManager.Show(new DefaultPopup
+            {
+                Color = _npcCommonSettings.GetPreset(currentNpcType).NpcColor,
+                Title = LocalizationProvider.GetText("popup_title/menu"),
+                Content = string.Empty,
+                Direction = Vector3.left
+            });
         }
 
         private void OnChangeNpcButtonClick()
@@ -100,6 +114,10 @@ namespace UI.Controllers
             _sendButton.Setup(new ImageButtonSettings
             {
                 Action = OnSendButtonClick
+            });
+            _menuButton.Setup(new ImageButtonSettings
+            {
+                Action = OnMenuButtonClick
             });
             _changeNpcButton.Setup(new ImageButtonSettings
             {
