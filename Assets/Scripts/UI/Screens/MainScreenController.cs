@@ -64,6 +64,7 @@ namespace UI.Controllers
                             _fade?.FadeOn(() =>
                             {
                                 Main.LoadScene(_npcCommonSettings.GetPreset(type).Id);
+                                SaveDataManager.Save(SaveDataManager.NPC_PRESET_KEY, _npcCommonSettings.GetPreset(type).Id);
                             });
                         }
                     }
