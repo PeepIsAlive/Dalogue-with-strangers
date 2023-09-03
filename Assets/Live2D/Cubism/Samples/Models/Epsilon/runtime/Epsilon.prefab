@@ -1290,7 +1290,7 @@ MonoBehaviour:
   m_textAlignment: 65535
   m_characterSpacing: -2
   m_wordSpacing: -8
-  m_lineSpacing: -15
+  m_lineSpacing: -17
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -1321,7 +1321,7 @@ MonoBehaviour:
   _SortingLayerID: 0
   _SortingOrder: 0
   m_hasFontAssetChanged: 0
-  m_renderer: {fileID: 0}
+  m_renderer: {fileID: 8932157493501368310}
   m_maskType: 0
 --- !u!1 &1010364214353775697
 GameObject:
@@ -4011,7 +4011,7 @@ Transform:
   m_GameObject: {fileID: 2774741616278940114}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.05, z: 0}
-  m_LocalScale: {x: 0.115, y: 0.145, z: 1}
+  m_LocalScale: {x: 0.105, y: 0.15, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 290885416384809289}
