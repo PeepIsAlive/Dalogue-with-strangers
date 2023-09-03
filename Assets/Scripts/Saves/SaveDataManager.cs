@@ -1,5 +1,7 @@
 using Services.Saves;
+using UnityEngine;
 using UnityEditor;
+using System.IO;
 using System;
 
 namespace Modules
@@ -45,10 +47,15 @@ namespace Modules
         }
 
 #if UNITY_EDITOR
-        [MenuItem("Saves/Clear saves and prefs")]
+        [MenuItem("Saves/Clear saves")]
         public static void ClearSaves()
         {
+            var saves = Directory.EnumerateFiles(Application.persistentDataPath);
 
+            foreach (var save in saves)
+            {
+                File.Delete(save);
+            }
         }
 
         [MenuItem("Saves/Clear prefs")]

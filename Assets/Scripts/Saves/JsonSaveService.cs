@@ -48,8 +48,9 @@ namespace Services.Saves
 
             Directory.CreateDirectory(GetPath(key));
 
-            using (var sw = new StreamWriter(path, true))
+            using (var sw = new StreamWriter(path))
             {
+                sw.Write(string.Empty);
                 sw.Write(json);
             }
 
