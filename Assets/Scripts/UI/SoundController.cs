@@ -1,3 +1,4 @@
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using UnityEngine;
 using Settings;
@@ -7,14 +8,12 @@ using Core;
 namespace UI.Controllers
 {
     [RequireComponent(typeof(Button))]
-    public sealed class SoundController : MonoBehaviour
+    public sealed class SoundController : MonoBehaviour, IPointerDownHandler
     {
         [SerializeField] private SoundEffectType _effectType;
-        [SerializeField] private Button _button;
-
         private AudioClip _audioClip;
 
-        private void OnClick()
+        public void OnPointerDown(PointerEventData eventData)
         {
             if (_audioClip == null)
                 return;
@@ -25,12 +24,6 @@ namespace UI.Controllers
         private void Awake()
         {
             _audioClip = SettingsProvider.Get<SoundsSettings>().GetAudioClip(_effectType);
-            _button?.onClick.AddListener(OnClick);
-        }
-
-        private void OnDestroy()
-        {
-            _button?.onClick?.RemoveListener(OnClick);
         }
     }
 }
