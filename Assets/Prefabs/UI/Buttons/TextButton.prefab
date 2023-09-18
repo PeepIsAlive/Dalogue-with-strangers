@@ -314,4 +314,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 869f343232c797448855b1e3803af0f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hapticType: 6
+  _hapticType: 5

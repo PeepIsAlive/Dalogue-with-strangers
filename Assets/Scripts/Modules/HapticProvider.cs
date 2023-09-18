@@ -4,7 +4,7 @@ namespace Modules
 {
     public sealed class HapticProvider
     {
-        public static bool State { get; private set; }
+        public static bool State { get; private set; } = true;
 
         public static void SetState(bool state)
         {
