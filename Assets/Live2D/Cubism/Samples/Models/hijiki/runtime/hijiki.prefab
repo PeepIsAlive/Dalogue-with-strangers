@@ -6008,7 +6008,7 @@ GameObject:
   - component: {fileID: 3985725829492351594}
   - component: {fileID: 6189988656740079207}
   m_Layer: 0
-  m_Name: hijiki
+  m_Name: Hijiki
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6177,7 +6177,7 @@ MonoBehaviour:
   CurrentExpressionIndex: -1
 --- !u!95 &6888399930114744159
 Animator:
-  serializedVersion: 5
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -6194,7 +6194,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &3985725829492351594
 MonoBehaviour:
   m_ObjectHideFlags: 0
