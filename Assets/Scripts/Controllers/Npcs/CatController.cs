@@ -25,15 +25,16 @@ namespace Controllers
 
         private IEnumerator AnimationRoutine()
         {
-            yield return new WaitForSecondsRealtime(15f);
             PlayAnimation(GetRandomAnimation());
+
+            yield return new WaitForSecondsRealtime(15f);
             yield return StartCoroutine(AnimationRoutine());
         }
 
         private static CatAnimationType GetRandomAnimation()
         {
             return Enum.GetValues(typeof(CatAnimationType))
-                .OfType<CatAnimationType>().Skip(2).ToList().GetRandomElement();
+                .OfType<CatAnimationType>().Skip(3).ToList().GetRandomElement();
         }
 
         private void Start()

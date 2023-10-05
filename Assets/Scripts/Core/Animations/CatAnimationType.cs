@@ -7,12 +7,12 @@ namespace Core.Animations
     {
         Idle = 0,
         Hissing = 1,
-        Licking = 2,
-        Meow = 3,
-        Scratching = 4,
-        Washing = 5,
-        Yawning = 6,
-        Inspection = 7,
-        FingerLicking = 8,
+        FingerLicking = 2,
+        Licking = 3,
+        Meow = 4,
+        Scratching = 5,
+        Washing = 6,
+        Yawning = 7,
+        Inspection = 8,
     }
 }
