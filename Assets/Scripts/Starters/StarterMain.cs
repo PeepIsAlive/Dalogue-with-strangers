@@ -3,7 +3,6 @@ using System.Threading.Tasks;
 using UnityEngine.UI;
 using UI.Controllers;
 using Controllers;
-using System.Linq;
 using UnityEngine;
 using Settings;
 using Inworld;
@@ -29,7 +28,7 @@ namespace Starters
         protected override async Task Initialize()
         {
             var npcPreset = SettingsProvider.Get<NpcCommonSettings>().GetPreset(_npcPresetId);
-            var npc = Instantiate(npcPreset.Prefabs.First());
+            var npc = Instantiate(npcPreset.Prefab);
 
             _sceneBackground.sprite = npcPreset.Background;
 

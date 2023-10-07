@@ -14,12 +14,9 @@ namespace Starters
 
         protected override async Task Initialize()
         {
-            var npcPreset = SettingsProvider.Get<NpcCommonSettings>().GetPreset(NpcType.Cats);
+            var npcPreset = SettingsProvider.Get<NpcCommonSettings>().GetPreset(NpcType.Cat);
 
-            npcPreset.Prefabs.ForEach(prefab =>
-            {
-                Instantiate(prefab);
-            });
+            Instantiate(npcPreset.Prefab);
             _sceneBackground.sprite = npcPreset.Background;
 
             await Task.Yield();
@@ -27,8 +24,6 @@ namespace Starters
 
         private async void Awake()
         {
-            Screen.orientation = ScreenOrientation.LandscapeLeft;
-
             LoadSceneProcessor.Instance.InvokeLoadAction();
             AnalyticsManager.OnStart();
 

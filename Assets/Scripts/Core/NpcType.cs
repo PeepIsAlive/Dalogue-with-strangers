@@ -4,6 +4,6 @@ namespace Core
     {
         Natori = 0,
         Epsilon = 1,
-        Cats = 2,
+        Cat = 2,
     }
 }
