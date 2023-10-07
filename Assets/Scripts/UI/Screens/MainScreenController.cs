@@ -46,7 +46,7 @@ namespace UI.Controllers
         {
             var currentNpcType = Application.CurrentNpcType;
             var buttonSettings = new List<TextButtonSettings>();
-            var npcTypes = Enum.GetValues(typeof(NpcType)).OfType<NpcType>().ToList();
+            var npcTypes = Enum.GetValues(typeof(NpcType)).OfType<NpcType>().SkipLast(1).ToList();
 
             npcTypes.Remove(Application.CurrentNpcType);
             npcTypes.ForEach(type =>
