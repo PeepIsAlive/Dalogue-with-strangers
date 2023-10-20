@@ -1,4 +1,5 @@
 [
+    { "tags": ["npc_answer", "show_cat"], "topic": "Of course!" },
     { "tags": ["button_title", "cancel"], "topic": "Cancel" },
 
     { "tags": ["popup_title", "change_npc"], "topic": "Changing npcs" },

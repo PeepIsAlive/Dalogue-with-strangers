@@ -11,6 +11,7 @@ using Scenes;
 using Events;
 using TMPro;
 using Core;
+using Utils;
 
 namespace UI.Controllers
 {
@@ -32,13 +33,16 @@ namespace UI.Controllers
 
         private void OnSendButtonClick()
         {
+            if (!MessageUtils.IsTriggerMessage(InputField.text, out var triggerType))  
+                OnSendButtonClickEvent?.Invoke();
+
             EventSystem.Send(new OnMessageSendEvent
             {
                 Message = InputField.text,
                 NpcType = Application.CurrentNpcType.ToString(),
+                TriggerType = triggerType
             });
 
-            OnSendButtonClickEvent?.Invoke();
             InputField.text = string.Empty;
         }
 
