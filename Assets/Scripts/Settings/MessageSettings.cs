@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using Extensions;
 using System;
 using Core;
 
@@ -8,6 +9,9 @@ namespace Settings
     [CreateAssetMenu(fileName = "MessageSettings", menuName = "Settings/MessageSettings", order = 0)]
     public sealed class MessageSettings : ScriptableObject
     {
+#if UNITY_EDITOR
+        [ReadOnly]
+#endif
         [SerializeField] private List<Trigger> _triggers;
 
         public TriggerType GetTrigger(List<string> keyWords)
@@ -44,5 +48,6 @@ namespace Settings
     {
         [field: SerializeField] public TriggerType TriggerType { get; private set; }
         [field: SerializeField] public List<string> Words { get; private set; }
+
     }
 }

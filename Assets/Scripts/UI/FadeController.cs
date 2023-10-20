@@ -7,6 +7,8 @@ namespace UI.Controllers
 {
     public sealed class FadeController : MonoBehaviour
     {
+        public static FadeController Instance { get; private set; }
+
         [SerializeField] private Image _image;
         private const float _fadeDuration = 1.1f;
 
@@ -30,6 +32,16 @@ namespace UI.Controllers
                 {
                     onFadeOnAction?.Invoke();
                 });
+        }
+
+        private void Start()
+        {
+            FadeOff();
+        }
+
+        private void Awake()
+        {
+            Instance = this;
         }
     }
 }

@@ -10,8 +10,8 @@ using System;
 using Scenes;
 using Events;
 using TMPro;
-using Core;
 using Utils;
+using Core;
 
 namespace UI.Controllers
 {
@@ -26,22 +26,27 @@ namespace UI.Controllers
         [SerializeField] private ImageButtonController _sendButton;
         [SerializeField] private ImageButtonController _changeNpcButton;
 
-        [Header("Other")]
-        [SerializeField] private FadeController _fade;
-
         private NpcCommonSettings _npcCommonSettings;
 
         private void OnSendButtonClick()
         {
-            if (!MessageUtils.IsTriggerMessage(InputField.text, out var triggerType))  
-                OnSendButtonClickEvent?.Invoke();
-
             EventSystem.Send(new OnMessageSendEvent
             {
                 Message = InputField.text,
-                NpcType = Application.CurrentNpcType.ToString(),
-                TriggerType = triggerType
+                NpcType = Application.CurrentNpcType.ToString()
             });
+
+            if (MessageUtils.IsTriggerMessage(InputField.text, out var triggerType))
+            {
+                EventSystem.Send(new OnTriggerEvent
+                {
+                    TriggerType = triggerType
+                });
+            }
+            else
+            {
+                OnSendButtonClickEvent?.Invoke();
+            }
 
             InputField.text = string.Empty;
         }
@@ -65,7 +70,7 @@ namespace UI.Controllers
                         {
                             Application.PopupViewManager.HideCurrentPopup();
 
-                            _fade?.FadeOn(() =>
+                            FadeController.Instance.FadeOn(() =>
                             {
                                 Main.LoadScene(_npcCommonSettings.GetPreset(type).Id);
                                 SaveDataManager.Save(SaveDataManager.NPC_PRESET_KEY, _npcCommonSettings.GetPreset(type).Id);
@@ -109,8 +114,6 @@ namespace UI.Controllers
             {
                 Action = OnChangeNpcButtonClick
             });
-
-            _fade?.FadeOff();
         }
     }
 }

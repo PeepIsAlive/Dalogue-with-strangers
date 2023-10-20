@@ -12,3 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 482beff112e05d0499eaa220903e6531, type: 3}
   m_Name: MessageSettings
   m_EditorClassIdentifier: 
+  _triggers:
+  - <TriggerType>k__BackingField: 1
+    <Words>k__BackingField:
+    - show
+    - cat

@@ -8,5 +8,6 @@ namespace Settings
     {
         [field: Header("Cat settings")]
         [field: SerializeField] public CatType CatType { get; private set; }
+        [field: SerializeField] public NpcType OwnerType { get; private set; }
     }
 }

@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 471fba2e1c2b7e44982893fc99578a6c, type: 3}
   m_Name: TororoPreset
   m_EditorClassIdentifier: 
-  <Id>k__BackingField: 51031f57-56ae-41dd-8a73-bdc94698a888
+  <Id>k__BackingField: aba25c2e-415f-4a72-935b-d3f506dadc14
   <Type>k__BackingField: 2
   <NpcColor>k__BackingField: {r: 0.20754719, g: 0.20069422, b: 0.20069422, a: 1}
   <Background>k__BackingField: {fileID: 21300000, guid: ff411575f565f7f408721f75337e8c3a, type: 3}
   <Prefab>k__BackingField: {fileID: 4489709656640481059, guid: f6da234c83c046949982800f224ed9db, type: 3}
   <CatType>k__BackingField: 1
+  <OwnerType>k__BackingField: 1

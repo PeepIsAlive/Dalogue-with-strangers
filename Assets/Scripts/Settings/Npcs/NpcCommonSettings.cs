@@ -22,6 +22,11 @@ namespace Settings
             return _presets.First(x => x.Id == id);
         }
 
+        public NpcPreset GetCatPresetByOwnerType(NpcType ownerType)
+        {
+            return _presets.Where(x => x is CatPreset).First(x => (x as CatPreset).OwnerType == ownerType);
+        }
+
         public string GetNpcName(NpcType type)
         {
             return LocalizationProvider.GetText(_localization.LocalizedAsset, $"name/{type}");
