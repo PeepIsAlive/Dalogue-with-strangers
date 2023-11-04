@@ -19,7 +19,8 @@ namespace Live_2D
         {
             get
             {
-                return Object.FindObjectOfType<NpcController>().NpcType;
+                var npcController = Object.FindObjectOfType<NpcController>();
+                return npcController != null ? npcController.NpcType : NpcType.Cat;
             }
         }
 
