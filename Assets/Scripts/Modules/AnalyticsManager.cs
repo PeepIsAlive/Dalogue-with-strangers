@@ -6,9 +6,12 @@ namespace Modules
 {
     public static class AnalyticsManager
     {
+        private const string SEND_MESSAGE_EVENT = "sendMessage";
+
         public static void OnStart()
         {
 #if !UNITY_EDITOR
+            Analytics.EnableCustomEvent(SEND_MESSAGE_EVENT, true);
             EventSystem.Subscribe<OnMessageSendEvent>(OnMessageSend);
 #endif
         }

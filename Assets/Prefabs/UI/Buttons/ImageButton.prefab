@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 3313083281561072407}
   - component: {fileID: 4478747838226360814}
   - component: {fileID: 571556293686589619}
+  - component: {fileID: 4482593398667016274}
+  - component: {fileID: 3648950971613912308}
   m_Layer: 5
   m_Name: ImageButton
   m_TagString: Untagged
@@ -150,3 +152,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _button: {fileID: 3313083281561072407}
   _view: {fileID: 4478747838226360814}
+--- !u!114 &4482593398667016274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3313083281561072405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34cbfed0474034747a42262beea0d381, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _effectType: 0
+--- !u!114 &3648950971613912308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3313083281561072405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 869f343232c797448855b1e3803af0f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _hapticType: 6

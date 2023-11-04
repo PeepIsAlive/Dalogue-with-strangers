@@ -10,6 +10,7 @@ using System;
 using Scenes;
 using Events;
 using TMPro;
+using Utils;
 using Core;
 
 namespace UI.Controllers
@@ -26,9 +27,6 @@ namespace UI.Controllers
         [SerializeField] private ImageButtonController _menuButton;
         [SerializeField] private ImageButtonController _changeNpcButton;
 
-        [Header("Other")]
-        [SerializeField] private FadeController _fade;
-
         private NpcCommonSettings _npcCommonSettings;
 
         private void OnSendButtonClick()
@@ -36,7 +34,7 @@ namespace UI.Controllers
             EventSystem.Send(new OnMessageSendEvent
             {
                 Message = InputField.text,
-                NpcType = Application.CurrentNpcType.ToString(),
+                NpcType = Application.CurrentNpcType.ToString()
             });
 
             OnSendButtonClickEvent?.Invoke();
@@ -60,9 +58,9 @@ namespace UI.Controllers
         {
             var currentNpcType = Application.CurrentNpcType;
             var buttonSettings = new List<TextButtonSettings>();
-            var npcTypes = Enum.GetValues(typeof(NpcType)).OfType<NpcType>().ToList();
+            var npcTypes = Enum.GetValues(typeof(NpcType)).OfType<NpcType>().SkipLast(1).ToList();
 
-            npcTypes.Remove(Application.CurrentNpcType);
+            npcTypes.Remove(currentNpcType);
             npcTypes.ForEach(type =>
             {
                 buttonSettings.Add
@@ -75,7 +73,7 @@ namespace UI.Controllers
                         {
                             Application.PopupViewManager.HideCurrentPopup();
 
-                            _fade?.FadeOn(() =>
+                            FadeController.Instance.FadeOn(() =>
                             {
                                 Main.LoadScene(_npcCommonSettings.GetPreset(type).Id);
                                 SaveDataManager.Save(SaveDataManager.NPC_PRESET_KEY, _npcCommonSettings.GetPreset(type).Id);
@@ -107,6 +105,11 @@ namespace UI.Controllers
             });
         }
 
+        private void TurnOffInputFieldInteractable(OnTriggerEvent data)
+        {
+            InputField.interactable = false;
+        }
+
         private void Start()
         {
             _npcCommonSettings = SettingsProvider.Get<NpcCommonSettings>();
@@ -124,7 +127,12 @@ namespace UI.Controllers
                 Action = OnChangeNpcButtonClick
             });
 
-            _fade?.FadeOff();
+            EventSystem.Subscribe<OnTriggerEvent>(TurnOffInputFieldInteractable);
+        }
+
+        private void OnDestroy()
+        {
+            EventSystem.Unsubscribe<OnTriggerEvent>(TurnOffInputFieldInteractable);
         }
     }
 }

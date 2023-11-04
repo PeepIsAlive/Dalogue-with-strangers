@@ -54,7 +54,6 @@ MonoBehaviour:
   <InputField>k__BackingField: {fileID: 4703632611095533247}
   _sendButton: {fileID: 486826477449191852}
   _changeNpcButton: {fileID: 312225626089470086}
-  _fade: {fileID: 0}
 --- !u!1 &4703632610177084035
 GameObject:
   m_ObjectHideFlags: 0
@@ -148,8 +147,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 46
-  m_fontSizeBase: 46
+  m_fontSize: 54
+  m_fontSizeBase: 54
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -283,8 +282,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 46
-  m_fontSizeBase: 46
+  m_fontSize: 54
+  m_fontSizeBase: 54
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

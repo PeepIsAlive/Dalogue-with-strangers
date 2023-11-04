@@ -9,6 +9,11 @@ namespace Utils
             return type.ToString();
         }
 
+        public static string GetAnimationName(CatAnimationType type)
+        {
+            return type.ToString();
+        }
+
         public static string GetAnimationName(EpsilonAnimationType type)
         {
             return type switch
