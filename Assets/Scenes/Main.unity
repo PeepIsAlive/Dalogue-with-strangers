@@ -1262,12 +1262,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2394753265019132747, guid: 30decace53410304eab08dc4dfe6c52f, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4703632609679431874, guid: 30decace53410304eab08dc4dfe6c52f, type: 3}
       propertyPath: _fade
       value: 
       objectReference: {fileID: 2054067704}
+    - target: {fileID: 4703632609679431874, guid: 30decace53410304eab08dc4dfe6c52f, type: 3}
+      propertyPath: _menuButton
+      value: 
+      objectReference: {fileID: 4703632611685683208}
     - target: {fileID: 4703632609679431875, guid: 30decace53410304eab08dc4dfe6c52f, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1378,6 +1382,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30decace53410304eab08dc4dfe6c52f, type: 3}
+--- !u!114 &4703632611685683208 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 805902111182442733, guid: 30decace53410304eab08dc4dfe6c52f, type: 3}
+  m_PrefabInstance: {fileID: 4703632611685683207}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d42f16c579c1b142992cbe2950a2a30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &4703632611685683209 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4703632609679431874, guid: 30decace53410304eab08dc4dfe6c52f, type: 3}

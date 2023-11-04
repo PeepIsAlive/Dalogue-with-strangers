@@ -1,7 +1,11 @@
 [
-    { "tags": ["trigger_type", "ShowCat"], "topic": "Of course!" },
     { "tags": ["button_title", "cancel"], "topic": "Cancel" },
 
     { "tags": ["popup_title", "change_npc"], "topic": "Changing npcs" },
-    { "tags": ["popup_content", "change_npc"], "topic": "Choose the NPC you want to chat with?" }
+    { "tags": ["popup_content", "change_npc"], "topic": "Choose the NPC you want to chat with?" },
+
+    { "tags": ["popup_title", "menu"], "topic": "Menu" },
+    { "tags": ["toggle_vibrations", "menu"], "topic": "Vibrations" },
+    { "tags": ["toggle_sound", "menu"], "topic": "Sound effects" },
+    { "tags": ["button_title", "save"], "topic": "Save changes" },
 ]

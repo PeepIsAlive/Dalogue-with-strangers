@@ -1,0 +1,33 @@
+using System.Collections.Generic;
+using UI.Settings;
+using UnityEngine;
+using Settings;
+
+namespace UI
+{
+    public sealed class MenuPopupView : PopupView<MenuPopup>
+    {
+        [Header("View")]
+        [SerializeField] private RectTransform _toggleParent;
+
+        public override void Setup(MenuPopup settings)
+        {
+            base.Setup(settings);
+            SetToggles(settings.InfoToggleSettings);
+        }
+
+        private void SetToggles(List<InfoToggleSettings> settings)
+        {
+            if (_toggleParent == null)
+                return;
+
+            var prefabSet = SettingsProvider.Get<PrefabsSet>();
+
+            settings.ForEach(toggleSetting =>
+            {
+                Instantiate(prefabSet.InfoToggle, _toggleParent)
+                    .Setup(toggleSetting);
+            });
+        }
+    }
+}

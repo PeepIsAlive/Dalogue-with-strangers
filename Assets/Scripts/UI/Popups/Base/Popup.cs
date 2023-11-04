@@ -6,14 +6,20 @@ namespace UI
 {
     public class Popup
     {
+        public string Title;
+        public Color? Color = null;
+        public Vector3 Direction;
         public bool IgnoreOverlayButtonAction;
+        public List<TextButtonSettings> ButtonSettings;
     }
 
     public sealed class DefaultPopup : Popup
     {
-        public string Title;
         public string Content;
-        public Color? Color = null;
-        public List<TextButtonSettings> ButtonSettings;
+    }
+
+    public sealed class MenuPopup: Popup
+    {
+        public List<InfoToggleSettings> InfoToggleSettings;
     }
 }

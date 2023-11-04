@@ -24,6 +24,7 @@ namespace UI.Controllers
 
         [Header("Buttons")]
         [SerializeField] private ImageButtonController _sendButton;
+        [SerializeField] private ImageButtonController _menuButton;
         [SerializeField] private ImageButtonController _changeNpcButton;
 
         private NpcCommonSettings _npcCommonSettings;
@@ -38,6 +39,60 @@ namespace UI.Controllers
 
             OnSendButtonClickEvent?.Invoke();
             InputField.text = string.Empty;
+        }
+
+        private void OnMenuButtonClick()
+        {
+            var currentNpcType = Application.CurrentNpcType;
+
+            Application.PopupViewManager.Show(new MenuPopup
+            {
+                Color = _npcCommonSettings.GetPreset(currentNpcType).NpcColor,
+                Title = LocalizationProvider.GetText("popup_title/menu"),
+                InfoToggleSettings = new List<InfoToggleSettings>
+                {
+                    new InfoToggleSettings
+                    {
+                        Title = LocalizationProvider.GetText("toggle_vibrations/menu"),
+                        Color = _npcCommonSettings.GetPreset(currentNpcType).NpcColor,
+                        Action = () =>
+                        {
+                            return false; // test
+                        }
+                    },
+                    new InfoToggleSettings
+                    {
+                        Title = LocalizationProvider.GetText("toggle_sound/menu"),
+                        Color = _npcCommonSettings.GetPreset(currentNpcType).NpcColor,
+                        Action = () =>
+                        {
+                            return false; // test
+                        }
+                    }
+                },
+                ButtonSettings = new List<TextButtonSettings>
+                {
+                    new TextButtonSettings
+                    {
+                        Title = LocalizationProvider.GetText("button_title/save"),
+                        Color = _npcCommonSettings.GetPreset(currentNpcType).NpcColor,
+                        Action = () =>
+                        {
+
+                        }
+                    },
+                    new TextButtonSettings
+                    {
+                        Title = LocalizationProvider.GetText("button_title/cancel"),
+                        Color = _npcCommonSettings.GetPreset(currentNpcType).NpcColor,
+                        Action = () =>
+                        {
+                            Application.PopupViewManager.HideCurrentPopup();
+                        }
+                    }
+                },
+                Direction = Vector3.left,
+            });
         }
 
         private void OnChangeNpcButtonClick()
@@ -103,6 +158,10 @@ namespace UI.Controllers
             _sendButton.Setup(new ImageButtonSettings
             {
                 Action = OnSendButtonClick
+            });
+            _menuButton.Setup(new ImageButtonSettings
+            {
+                Action = OnMenuButtonClick
             });
             _changeNpcButton.Setup(new ImageButtonSettings
             {

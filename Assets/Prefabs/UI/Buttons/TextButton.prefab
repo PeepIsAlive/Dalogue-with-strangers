@@ -274,6 +274,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _titleLabel: {fileID: 8554260694835550549}
+  _buttonImage: {fileID: 8554260695343298499}
 --- !u!114 &6801700914006262481
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -288,7 +289,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _button: {fileID: 8554260695343298498}
   _view: {fileID: 1689530102699318726}
-  _buttonImage: {fileID: 8554260695343298499}
 --- !u!114 &2511070781963197915
 MonoBehaviour:
   m_ObjectHideFlags: 0
