@@ -36,18 +36,7 @@ namespace UI.Controllers
                 NpcType = Application.CurrentNpcType.ToString()
             });
 
-            if (MessageUtils.IsTriggerMessage(InputField.text, out var triggerType))
-            {
-                EventSystem.Send(new OnTriggerEvent
-                {
-                    TriggerType = triggerType
-                });
-            }
-            else
-            {
-                OnSendButtonClickEvent?.Invoke();
-            }
-
+            OnSendButtonClickEvent?.Invoke();
             InputField.text = string.Empty;
         }
 
@@ -102,6 +91,11 @@ namespace UI.Controllers
             });
         }
 
+        private void TurnOffInputFieldInteractable(OnTriggerEvent data)
+        {
+            InputField.interactable = false;
+        }
+
         private void Start()
         {
             _npcCommonSettings = SettingsProvider.Get<NpcCommonSettings>();
@@ -114,6 +108,13 @@ namespace UI.Controllers
             {
                 Action = OnChangeNpcButtonClick
             });
+
+            EventSystem.Subscribe<OnTriggerEvent>(TurnOffInputFieldInteractable);
+        }
+
+        private void OnDestroy()
+        {
+            EventSystem.Unsubscribe<OnTriggerEvent>(TurnOffInputFieldInteractable);
         }
     }
 }

@@ -8,6 +8,9 @@ using Settings;
 using Inworld;
 using Modules;
 using Scenes;
+using Events;
+using System;
+using Core;
 
 namespace Starters
 {
@@ -53,6 +56,17 @@ namespace Starters
 
                 _inworldController.CurrentCharacter = controller.InworldCharacter;
                 _mainScreenController.OnSendButtonClickEvent += inworldPlayer.SendText;
+
+                controller.InworldCharacter.OnGoalCompleted.AddListener(goal =>
+                {
+                    if (!Enum.TryParse<TriggerType>(goal, out var triggerType))
+                        return;
+
+                    EventSystem.Send(new OnTriggerEvent
+                    {
+                        TriggerType = triggerType
+                    });
+                });
             }
         }
 

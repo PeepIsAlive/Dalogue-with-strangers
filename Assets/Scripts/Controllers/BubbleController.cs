@@ -1,4 +1,3 @@
-using Localization;
 using DG.Tweening;
 using UnityEngine;
 using Modules;
@@ -17,11 +16,6 @@ namespace Controllers
                 return;
 
             _label.text += $"{text} ";
-        }
-
-        private void OnTrigger(OnTriggerEvent data)
-        {
-            AddText(LocalizationProvider.GetText($"trigger_type/{data.TriggerType}"));
         }
 
         private void ClearBubbleText(OnMessageSendEvent data)
@@ -49,13 +43,11 @@ namespace Controllers
 
         private void Start()
         {
-            EventSystem.Subscribe<OnTriggerEvent>(OnTrigger);
             EventSystem.Subscribe<OnMessageSendEvent>(ClearBubbleText);
         }
 
         private void OnDestroy()
         {
-            EventSystem.Unsubscribe<OnTriggerEvent>(OnTrigger);
             EventSystem.Unsubscribe<OnMessageSendEvent>(ClearBubbleText);
         }
     }

@@ -16,16 +16,17 @@ namespace Controllers
             switch (data.TriggerType)
             {
                 case TriggerType.ShowCat:
-
+                {
                     var settings = SettingsProvider.Get<NpcCommonSettings>();
                     var preset = settings.GetCatPresetByOwnerType(Application.CurrentNpcType);
 
-                    FadeController.Instance.FadeOn(() =>
+                    FadeController.Instance.FadeOnWithDelay(3f, () =>
                     {
                         CatsScene.LoadScene(preset.Id);
                     });
 
                     break;
+                }
             }
         }
 
