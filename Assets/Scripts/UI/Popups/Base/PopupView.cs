@@ -29,6 +29,8 @@ namespace UI
         {
             _ignoreOverlayButtonAction = settings.IgnoreOverlayButtonAction;
             _direction = settings.Direction;
+
+            InitializeButtons(settings.ButtonSettings);
         }
 
         public override void Show()
@@ -47,7 +49,7 @@ namespace UI
             DoHide();
         }
 
-        protected void InitializeButtons<B>(List<B> buttonSettings, Color? color = null) where B : ButtonSettings
+        private void InitializeButtons<B>(List<B> buttonSettings) where B : ButtonSettings
         {
             if (buttonSettings == null)
                 return;
@@ -108,8 +110,10 @@ namespace UI
 
         private void AddListeners()
         {
-            if (!_ignoreOverlayButtonAction)
-                _overlayButton?.onClick.AddListener(Hide);
+            if (_ignoreOverlayButtonAction)
+                return;
+
+            _overlayButton?.onClick.AddListener(Hide);
         }
 
         private void RemoveListeners()

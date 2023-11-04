@@ -8,6 +8,7 @@ namespace UI
     {
         public Vector3 Direction;
         public bool IgnoreOverlayButtonAction;
+        public List<TextButtonSettings> ButtonSettings;
     }
 
     public sealed class DefaultPopup : Popup
@@ -15,6 +16,5 @@ namespace UI
         public string Title;
         public string Content;
         public Color? Color = null;
-        public List<TextButtonSettings> ButtonSettings;
     }
 }

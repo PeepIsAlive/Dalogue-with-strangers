@@ -17,7 +17,6 @@ namespace UI
 
             SetTitleText(settings.Title, settings.Color);
             SetContentText(settings.Content, settings.Color);
-            InitializeButtons(settings.ButtonSettings, settings.Color);
         }
 
         private void SetTitleText(string text, Color? color = null)
