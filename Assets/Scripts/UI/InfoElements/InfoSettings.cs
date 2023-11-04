@@ -5,7 +5,7 @@ namespace UI.Settings
 {
     public class InfoSettings
     {
-        public string Content;
+        public string Title;
         public Color? Color = null;
     }
 

@@ -13,7 +13,7 @@ namespace UI.Controllers
 
         public void Setup(InfoToggleSettings settings)
         {
-            _view.SetText(settings.Content);
+            _view.SetText(settings.Title);
             _view.SetColor(settings.Color);
 
             _button.onClick.AddListener(() =>

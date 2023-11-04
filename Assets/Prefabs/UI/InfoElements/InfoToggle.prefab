@@ -229,8 +229,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff590f0b3ed5ab740a6f1801ef5e41e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _checkmarkRect: {fileID: 5671432920017961516}
   _contentLabel: {fileID: 2476451904379937883}
+  _checkmarkImage: {fileID: 3469275695820450164}
+  _rootImage: {fileID: 6119602996105873605}
 --- !u!114 &6716650559822428271
 MonoBehaviour:
   m_ObjectHideFlags: 0

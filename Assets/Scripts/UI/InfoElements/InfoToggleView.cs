@@ -7,6 +7,8 @@ namespace UI.Views
     public sealed class InfoToggleView : MonoBehaviour
     {
         [SerializeField] private TMP_Text _contentLabel;
+
+        [Header("Images")]
         [SerializeField] private Image _checkmarkImage;
         [SerializeField] private Image _rootImage;
 

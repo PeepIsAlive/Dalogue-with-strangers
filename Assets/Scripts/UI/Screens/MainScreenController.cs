@@ -45,12 +45,53 @@ namespace UI.Controllers
         {
             var currentNpcType = Application.CurrentNpcType;
 
-            Application.PopupViewManager.Show(new DefaultPopup
+            Application.PopupViewManager.Show(new MenuPopup
             {
                 Color = _npcCommonSettings.GetPreset(currentNpcType).NpcColor,
                 Title = LocalizationProvider.GetText("popup_title/menu"),
-                Content = string.Empty,
-                Direction = Vector3.left
+                InfoToggleSettings = new List<InfoToggleSettings>
+                {
+                    new InfoToggleSettings
+                    {
+                        Title = LocalizationProvider.GetText("toggle_vibrations/menu"),
+                        Color = _npcCommonSettings.GetPreset(currentNpcType).NpcColor,
+                        Action = () =>
+                        {
+                            return false; // test
+                        }
+                    },
+                    new InfoToggleSettings
+                    {
+                        Title = LocalizationProvider.GetText("toggle_sound/menu"),
+                        Color = _npcCommonSettings.GetPreset(currentNpcType).NpcColor,
+                        Action = () =>
+                        {
+                            return false; // test
+                        }
+                    }
+                },
+                ButtonSettings = new List<TextButtonSettings>
+                {
+                    new TextButtonSettings
+                    {
+                        Title = LocalizationProvider.GetText("button_title/save"),
+                        Color = _npcCommonSettings.GetPreset(currentNpcType).NpcColor,
+                        Action = () =>
+                        {
+
+                        }
+                    },
+                    new TextButtonSettings
+                    {
+                        Title = LocalizationProvider.GetText("button_title/cancel"),
+                        Color = _npcCommonSettings.GetPreset(currentNpcType).NpcColor,
+                        Action = () =>
+                        {
+                            Application.PopupViewManager.HideCurrentPopup();
+                        }
+                    }
+                },
+                Direction = Vector3.left,
             });
         }
 

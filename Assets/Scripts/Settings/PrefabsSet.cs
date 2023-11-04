@@ -10,5 +10,6 @@ namespace Settings
     {
         [field: SerializeField] public List<PopupViewBase> Popups { get; private set; }
         [field: SerializeField] public List<ButtonController> Buttons { get; private set; }
+        [field: SerializeField] public InfoToggleController InfoToggle { get; private set; }
     }
 }

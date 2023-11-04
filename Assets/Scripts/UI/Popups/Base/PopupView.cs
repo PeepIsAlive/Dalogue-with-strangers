@@ -7,6 +7,7 @@ using DG.Tweening;
 using UI.Settings;
 using System.Linq;
 using Settings;
+using TMPro;
 
 namespace UI
 {
@@ -15,6 +16,8 @@ namespace UI
         [Header("Base")]
         [SerializeField] private RectTransform _rootRect;
         [SerializeField] private Button _overlayButton;
+        [SerializeField] private TMP_Text _titleLabel;
+        [SerializeField] private Image _headerImage;
 
         [Header("Blocks")]
         [SerializeField] private RectTransform _topParent;
@@ -31,6 +34,7 @@ namespace UI
             _direction = settings.Direction;
 
             InitializeButtons(settings.ButtonSettings);
+            SetTitleText(settings.Title, settings.Color);
         }
 
         public override void Show()
@@ -47,6 +51,15 @@ namespace UI
 
             RemoveListeners();
             DoHide();
+        }
+
+        private void SetTitleText(string text, Color? color = null)
+        {
+            if (_titleLabel == null || _headerImage == null)
+                return;
+
+            _titleLabel.text = text;
+            _headerImage.color = (Color)color;
         }
 
         private void InitializeButtons<B>(List<B> buttonSettings) where B : ButtonSettings
