@@ -4,15 +4,14 @@ using Localization;
 using System.Linq;
 using UnityEngine;
 using UI.Settings;
+using Extensions;
 using Settings;
 using Modules;
 using System;
 using Scenes;
 using Events;
 using TMPro;
-using Utils;
 using Core;
-using Saves;
 
 namespace UI.Controllers
 {
@@ -45,63 +44,16 @@ namespace UI.Controllers
         private void OnMenuButtonClick()
         {
             var currentNpcType = Application.CurrentNpcType;
+            var color = _npcCommonSettings.GetPreset(currentNpcType).NpcColor;
 
-            Application.PopupViewManager.Show(new MenuPopup
-            {
-                Color = _npcCommonSettings.GetPreset(currentNpcType).NpcColor,
-                Title = LocalizationProvider.GetText("popup_title/menu"),
-                InfoToggleSettings = new List<InfoToggleSettings>
-                {
-                    new InfoToggleSettings
-                    {
-                        Title = LocalizationProvider.GetText("toggle_vibrations/menu"),
-                        Color = _npcCommonSettings.GetPreset(currentNpcType).NpcColor,
-                        StartState = HapticProvider.State,
-                        Action = () =>
-                        {
-                            HapticProvider.SwitchState();
-                            return HapticProvider.State;
-                        }
-                    },
-                    new InfoToggleSettings
-                    {
-                        Title = LocalizationProvider.GetText("toggle_sound/menu"),
-                        Color = _npcCommonSettings.GetPreset(currentNpcType).NpcColor,
-                        StartState = SoundProvider.State,
-                        Action = () =>
-                        {
-                            SoundProvider.SwitchState();
-                            return SoundProvider.State;
-                        }
-                    }
-                },
-                ButtonSettings = new List<TextButtonSettings>
-                {
-                    new TextButtonSettings
-                    {
-                        Title = LocalizationProvider.GetText("button_title/close"),
-                        Color = _npcCommonSettings.GetPreset(currentNpcType).NpcColor,
-                        Action = () =>
-                        {
-                            SaveDataManager.Save(SaveDataManager.SETTINGS_KEY, new SettingsSaveData
-                            {
-                                HapticState = HapticProvider.State,
-                                SoundState = SoundProvider.State
-                            });
-                            Application.PopupViewManager.HideCurrentPopup();
-                        }
-                    }
-                },
-                IgnoreOverlayButtonAction = true,
-                Direction = Vector3.left,
-            });
+            PopupExtensions.ShowMenuPopup(color);
         }
 
         private void OnChangeNpcButtonClick()
         {
-            var currentNpcType = Application.CurrentNpcType;
-            var buttonSettings = new List<TextButtonSettings>();
             var npcTypes = Enum.GetValues(typeof(NpcType)).OfType<NpcType>().SkipLast(1).ToList();
+            var buttonSettings = new List<TextButtonSettings>();
+            var currentNpcType = Application.CurrentNpcType;
 
             npcTypes.Remove(currentNpcType);
             npcTypes.ForEach(type =>
@@ -139,13 +91,7 @@ namespace UI.Controllers
                 }
             );
 
-            Application.PopupViewManager.Show(new DefaultPopup
-            {
-                Color = _npcCommonSettings.GetPreset(currentNpcType).NpcColor,
-                Title = LocalizationProvider.GetText("popup_title/change_npc"),
-                Content = LocalizationProvider.GetText("popup_content/change_npc"),
-                ButtonSettings = buttonSettings
-            });
+            PopupExtensions.ShowChangeNpcPopup(_npcCommonSettings.GetPreset(currentNpcType).NpcColor, buttonSettings);
         }
 
         private void TurnOffInputFieldInteractable(OnTriggerEvent data)
