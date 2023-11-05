@@ -18,8 +18,10 @@ namespace Modules
 
         public static void Haptic(HapticTypes type)
         {
-            if (State)
-                MMVibrationManager.Haptic(type);
+            if (!State)
+                return;
+
+            MMVibrationManager.Haptic(type);
         }
     }
 }

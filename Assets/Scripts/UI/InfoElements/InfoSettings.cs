@@ -11,6 +11,7 @@ namespace UI.Settings
 
     public sealed class InfoToggleSettings : InfoSettings
     {
+        public bool StartState;
         public Func<bool> Action;
     }
 }

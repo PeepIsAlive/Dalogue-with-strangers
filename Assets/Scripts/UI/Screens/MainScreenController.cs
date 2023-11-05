@@ -55,18 +55,22 @@ namespace UI.Controllers
                     {
                         Title = LocalizationProvider.GetText("toggle_vibrations/menu"),
                         Color = _npcCommonSettings.GetPreset(currentNpcType).NpcColor,
+                        StartState = HapticProvider.State,
                         Action = () =>
                         {
-                            return false; // test
+                            HapticProvider.SwitchState();
+                            return HapticProvider.State;
                         }
                     },
                     new InfoToggleSettings
                     {
                         Title = LocalizationProvider.GetText("toggle_sound/menu"),
                         Color = _npcCommonSettings.GetPreset(currentNpcType).NpcColor,
+                        StartState = SoundProvider.State,
                         Action = () =>
                         {
-                            return false; // test
+                            SoundProvider.SwitchState();
+                            return SoundProvider.State;
                         }
                     }
                 },

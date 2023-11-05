@@ -15,6 +15,7 @@ namespace UI.Controllers
         {
             _view.SetText(settings.Title);
             _view.SetColor(settings.Color);
+            _view.SetCheckmarkState(settings.StartState);
 
             _button.onClick.AddListener(() =>
             {
