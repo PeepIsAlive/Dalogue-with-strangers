@@ -18,6 +18,11 @@ namespace Modules
             Instance._audioSource.PlayOneShot(clip);
         }
 
+        public static void SetState(bool state)
+        {
+            State = state;
+        }
+
         public static void SwitchState()
         {
             State  = !State;
@@ -25,7 +30,16 @@ namespace Modules
 
         private void Awake()
         {
-            Instance = this;
+            if (Instance == null)
+            {
+                Instance = this;
+            }
+            else if (Instance == this)
+            {
+                Destroy(gameObject);
+            }
+
+            DontDestroyOnLoad(gameObject);
         }
 
         private void Start()

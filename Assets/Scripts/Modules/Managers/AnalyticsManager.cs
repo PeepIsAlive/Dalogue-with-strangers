@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine.Analytics;
 using Events;
 
-namespace Modules
+namespace Modules.Managers
 {
     public static class AnalyticsManager
     {
@@ -11,6 +11,9 @@ namespace Modules
         public static void OnStart()
         {
 #if !UNITY_EDITOR
+
+            Analytics.enabled = true;
+
             Analytics.EnableCustomEvent(SEND_MESSAGE_EVENT, true);
             EventSystem.Subscribe<OnMessageSendEvent>(OnMessageSend);
 #endif

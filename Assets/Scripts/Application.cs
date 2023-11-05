@@ -1,7 +1,7 @@
+using Modules.Managers;
 using UnityEngine;
 using Controllers;
 using Core;
-using UI;
 
 namespace Live_2D
 {

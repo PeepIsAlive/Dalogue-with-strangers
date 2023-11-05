@@ -7,6 +7,7 @@ using UnityEngine;
 using Settings;
 using Modules;
 using Scenes;
+using Saves;
 using Core;
 
 namespace Starters
@@ -31,6 +32,8 @@ namespace Starters
             if (string.IsNullOrEmpty(presetId))
                 presetId = SettingsProvider.Get<NpcCommonSettings>().GetPreset(NpcType.Natori).Id;
 
+            SetSettingsStates();
+
             await LocalizationProvider.Initialize(LocalizationSettings.ProjectLocale);
             await LoadMainScene(presetId);
         }
@@ -43,6 +46,18 @@ namespace Starters
             await Task.Delay(8000);
 
             operation.allowSceneActivation = true;
+        }
+
+        private void SetSettingsStates()
+        {
+            if (SaveDataManager.HasSave(SaveDataManager.SETTINGS_KEY))
+            {
+                SaveDataManager.LoadSave<SettingsSaveData>(SaveDataManager.SETTINGS_KEY, saveData =>
+                {
+                    HapticProvider.SetState(saveData.HapticState);
+                    SoundProvider.SetState(saveData.SoundState);
+                });
+            }
         }
 
         private async void Awake()

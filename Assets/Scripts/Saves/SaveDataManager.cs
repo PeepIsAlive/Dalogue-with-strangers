@@ -9,17 +9,15 @@ namespace Modules
     public static class SaveDataManager
     {
         public const string NPC_PRESET_KEY = "npc_preset_id";
+        public const string SETTINGS_KEY = "settings";
 
         private static readonly JsonSaveService _jsonService;
-        private static readonly PrefsSaveService _prefsService;
 
         static SaveDataManager()
         {
             _jsonService = new JsonSaveService();
-            _prefsService = new PrefsSaveService();
         }
 
-        #region json service
         public static bool HasSave(string key)
         {
             return _jsonService.SaveIsExist(key);
@@ -34,17 +32,6 @@ namespace Modules
         {
             _jsonService.Load(key, callback);
         }
-        #endregion
-
-        public static void SavePrefs(string key, object data, Action<bool> callback = null)
-        {
-            _prefsService.Save(key, data, callback);
-        }
-
-        public static void LoadPrefs<T>(string key, Action<T> callback)
-        {
-            _prefsService.Load(key, callback);
-        }
 
 #if UNITY_EDITOR
         [MenuItem("Saves/Clear saves")]
@@ -56,12 +43,6 @@ namespace Modules
             {
                 File.Delete(save);
             }
-        }
-
-        [MenuItem("Saves/Clear prefs")]
-        public static void ClearPrefs()
-        {
-
         }
 #endif
     }

@@ -1,8 +1,8 @@
 using System.Threading.Tasks;
+using Modules.Managers;
 using UnityEngine.UI;
 using UnityEngine;
 using Settings;
-using Modules;
 using Scenes;
 
 namespace Starters

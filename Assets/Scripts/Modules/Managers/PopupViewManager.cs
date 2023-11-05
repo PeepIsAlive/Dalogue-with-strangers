@@ -2,8 +2,9 @@ using Object = UnityEngine.Object;
 using UnityEngine;
 using System.Linq;
 using Settings;
+using UI;
 
-namespace UI
+namespace Modules.Managers
 {
     public sealed class PopupViewManager
     {

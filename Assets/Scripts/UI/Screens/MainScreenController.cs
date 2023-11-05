@@ -12,6 +12,7 @@ using Events;
 using TMPro;
 using Utils;
 using Core;
+using Saves;
 
 namespace UI.Controllers
 {
@@ -78,23 +79,20 @@ namespace UI.Controllers
                 {
                     new TextButtonSettings
                     {
-                        Title = LocalizationProvider.GetText("button_title/save"),
+                        Title = LocalizationProvider.GetText("button_title/close"),
                         Color = _npcCommonSettings.GetPreset(currentNpcType).NpcColor,
                         Action = () =>
                         {
-
-                        }
-                    },
-                    new TextButtonSettings
-                    {
-                        Title = LocalizationProvider.GetText("button_title/cancel"),
-                        Color = _npcCommonSettings.GetPreset(currentNpcType).NpcColor,
-                        Action = () =>
-                        {
+                            SaveDataManager.Save(SaveDataManager.SETTINGS_KEY, new SettingsSaveData
+                            {
+                                HapticState = HapticProvider.State,
+                                SoundState = SoundProvider.State
+                            });
                             Application.PopupViewManager.HideCurrentPopup();
                         }
                     }
                 },
+                IgnoreOverlayButtonAction = true,
                 Direction = Vector3.left,
             });
         }
