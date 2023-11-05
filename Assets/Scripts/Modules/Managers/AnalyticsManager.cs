@@ -28,10 +28,10 @@ namespace Modules.Managers
 
         private static void OnMessageSend(OnMessageSendEvent data)
         {
-            Analytics.CustomEvent("sendMessage", new Dictionary<string, object>
+            Analytics.SendEvent(SEND_MESSAGE_EVENT, new Dictionary<string, object>
             {
                 { "Message", data.Message },
-                { "NpcType", data.NpcType },
+                { "NpcType", data.NpcType }
             });
         }
     }

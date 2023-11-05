@@ -30,14 +30,7 @@ namespace Starters
         private async void Awake()
         {
             LoadSceneProcessor.Instance.InvokeLoadAction();
-            AnalyticsManager.OnStart();
-
             await Initialize();
-        }
-
-        private void OnDestroy()
-        {
-            AnalyticsManager.OnDestroy();
         }
     }
 }
