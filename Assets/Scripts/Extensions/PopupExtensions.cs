@@ -6,7 +6,6 @@ using UI.Settings;
 using Modules;
 using Saves;
 using UI;
-using Settings;
 
 namespace Extensions
 {
