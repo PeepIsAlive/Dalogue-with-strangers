@@ -62,8 +62,9 @@ namespace Starters
 
         private async void Awake()
         {
+#if !UNITY_EDITOR && (UNITY_ANDROID || UNITY_IOS)
             Application.targetFrameRate = 60;
-
+#endif
             _settings = SettingsProvider.Get<BackgroundsSettings>();
             _background.sprite = _settings.GetRandomBackground();
 
