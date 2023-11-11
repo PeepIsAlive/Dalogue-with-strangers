@@ -1,3 +1,4 @@
+using static TMPro.TMP_Dropdown;
 using UnityEngine;
 using System;
 
@@ -13,5 +14,10 @@ namespace UI.Settings
     {
         public bool StartState;
         public Func<bool> Action;
+    }
+
+    public sealed class DropdownSettings : InfoSettings
+    {
+        public OptionDataList OptionDataList;
     }
 }

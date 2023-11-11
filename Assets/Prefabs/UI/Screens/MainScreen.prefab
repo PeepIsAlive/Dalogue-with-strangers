@@ -53,6 +53,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <InputField>k__BackingField: {fileID: 4703632611095533247}
   _sendButton: {fileID: 486826477449191852}
+  _menuButton: {fileID: 0}
   _changeNpcButton: {fileID: 312225626089470086}
 --- !u!1 &4703632610177084035
 GameObject:
@@ -255,7 +256,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Enter text...
+  m_text: ...
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 93ff965ffe2f066459072aef3fe530b4, type: 2}
   m_sharedMaterial: {fileID: -5151360545342404157, guid: 93ff965ffe2f066459072aef3fe530b4, type: 2}

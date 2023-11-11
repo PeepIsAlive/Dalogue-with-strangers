@@ -20,6 +20,7 @@ namespace UI
 
     public sealed class MenuPopup: Popup
     {
+        public DropdownSettings DropdownSettings;
         public List<InfoToggleSettings> InfoToggleSettings;
     }
 }

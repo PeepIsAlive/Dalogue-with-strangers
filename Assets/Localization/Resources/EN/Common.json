@@ -4,6 +4,8 @@
     { "tags": ["button_title", "yes"], "topic": "Yes" },
     { "tags": ["button_title", "no"], "topic": "No" },
 
+    { "tags": ["dropdown_title", "language"], "topic": "Language" },
+
     { "tags": ["popup_title", "change_npc"], "topic": "Changing npcs" },
     { "tags": ["popup_title", "data_collection"], "topic": "Data collection" },
 

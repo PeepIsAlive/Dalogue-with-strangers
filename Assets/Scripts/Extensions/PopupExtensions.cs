@@ -1,13 +1,17 @@
 using Application = Live_2D.Application;
+using UnityEngine.Localization.Settings;
 using System.Collections.Generic;
-using Modules.Managers;
+using static TMPro.TMP_Dropdown;
+using Localization.Metadata;
 using Localization;
 using UnityEngine;
+using System.Linq;
 using UI.Settings;
 using Modules;
 using System;
 using Saves;
 using UI;
+using Controllers;
 
 namespace Extensions
 {
@@ -15,6 +19,13 @@ namespace Extensions
     {
         public static void ShowMenuPopup(Color? color)
         {
+            var currentLanguage = LocalizationSettings.SelectedLocale.Metadata.GetMetadata<SystemLanguageMetadata>().SystemLanguage.ToString();
+            var languages = new List<string>
+            {
+                SystemLanguage.Russian.ToString(),
+                SystemLanguage.English.ToString()
+            };
+
             Application.PopupViewManager.Show(new MenuPopup
             {
                 Color = color,
@@ -51,15 +62,43 @@ namespace Extensions
                         Title = LocalizationProvider.GetText("button_title/close"),
                         Action = () =>
                         {
+                            var language = Enum.Parse<SystemLanguage>(Application.DropdownController.GetCurrentValue());
+
                             SaveDataManager.Save(SaveDataManager.SETTINGS_KEY, new SettingsSaveData
                             {
+                                Language = language,
                                 HapticState = HapticProvider.State,
                                 SoundState = SoundProvider.State
                             });
                             Application.PopupViewManager.HideCurrentPopup();
+
+                            if (LocalizationSettings.SelectedLocale.Metadata.GetMetadata<SystemLanguageMetadata>().SystemLanguage != language)
+                            {
+                                LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales
+                                    .First(l => l.Metadata.GetMetadata<SystemLanguageMetadata>().SystemLanguage == language);
+                            }
                         },
                         Color = color
                     }
+                },
+                DropdownSettings = new DropdownSettings
+                {
+                    OptionDataList = new OptionDataList
+                    {
+                        options = new List<OptionData>
+                        {
+                            new OptionData
+                            {
+                                text = languages.First(x => x == currentLanguage)
+                            },
+                            new OptionData
+                            {
+                                text = languages.First(x => x != currentLanguage)
+                            }
+                        }
+                    },
+                    Title = LocalizationProvider.GetText("dropdown_title/language"),
+                    Color = color,
                 },
                 IgnoreOverlayButtonAction = true,
                 Direction = Vector3.left
