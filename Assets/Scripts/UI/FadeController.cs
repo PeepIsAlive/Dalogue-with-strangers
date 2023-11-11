@@ -13,18 +13,6 @@ namespace UI.Controllers
         [SerializeField] private Image _image;
         private const float _fadeDuration = 1.1f;
 
-        public void FadeOffWithDelay(float delay, Action onFadeOffAction = null)
-        {
-            StartCoroutine(FadeOffRoutine());
-
-            IEnumerator FadeOffRoutine()
-            {
-                yield return new WaitForSecondsRealtime(delay);
-                FadeOff(onFadeOffAction);
-                yield break;
-            }
-        }
-
         public void FadeOnWithDelay(float delay, Action onFadeOnAction = null)
         {
             StartCoroutine(FadeOnRoutine());

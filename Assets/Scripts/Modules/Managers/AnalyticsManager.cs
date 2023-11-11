@@ -1,7 +1,13 @@
+using Application = Live_2D.Application;
 using System.Collections.Generic;
 using Unity.Services.Analytics;
+using Localization;
 using UnityEngine;
+using UI.Settings;
+using Extensions;
+using Settings;
 using Events;
+using UI;
 
 namespace Modules.Managers
 {
@@ -17,8 +23,14 @@ namespace Modules.Managers
             if (_isInitialized)
                 return;
 #if !UNITY_EDITOR
-            EventSystem.Subscribe<OnMessageSendEvent>(OnMessageSend);
-            AnalyticsService.Instance.StartDataCollection();
+            var npcCommonSettings = SettingsProvider.Get<NpcCommonSettings>();
+
+            PopupExtensions.ShowDataCollectionPopup(npcCommonSettings.GetPreset(Application.CurrentNpcType).NpcColor, () =>
+            {
+                EventSystem.Subscribe<OnMessageSendEvent>(OnMessageSend);
+                AnalyticsService.Instance.StartDataCollection();
+                
+            });
 #endif
             _isInitialized = true;
         }

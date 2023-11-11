@@ -1,5 +1,6 @@
 using Application = Live_2D.Application;
 using System.Collections.Generic;
+using Modules.Managers;
 using Localization;
 using System.Linq;
 using UnityEngine;
@@ -117,6 +118,7 @@ namespace UI.Controllers
             });
 
             EventSystem.Subscribe<OnTriggerEvent>(TurnOffInputFieldInteractable);
+            AnalyticsManager.Instance.Initialize();
         }
 
         private void OnDestroy()

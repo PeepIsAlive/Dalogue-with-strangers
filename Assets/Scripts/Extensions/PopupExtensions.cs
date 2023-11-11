@@ -1,9 +1,11 @@
 using Application = Live_2D.Application;
 using System.Collections.Generic;
+using Modules.Managers;
 using Localization;
 using UnityEngine;
 using UI.Settings;
 using Modules;
+using System;
 using Saves;
 using UI;
 
@@ -60,7 +62,7 @@ namespace Extensions
                     }
                 },
                 IgnoreOverlayButtonAction = true,
-                Direction = Vector3.left,
+                Direction = Vector3.left
             });
         }
 
@@ -71,7 +73,39 @@ namespace Extensions
                 Title = LocalizationProvider.GetText("popup_title/change_npc"),
                 Content = LocalizationProvider.GetText("popup_content/change_npc"),
                 ButtonSettings = buttonSettings,
-                Color = color,
+                Color = color
+            });
+        }
+
+        public static void ShowDataCollectionPopup(Color? color, Action action)
+        {
+            Application.PopupViewManager.Show(new DefaultPopup
+            {
+                Title = LocalizationProvider.GetText("popup_title/data_collection"),
+                Content = LocalizationProvider.GetText("popup_content/data_collection"),
+                ButtonSettings = new List<TextButtonSettings>
+                {
+                    new TextButtonSettings
+                    {
+                        Title = LocalizationProvider.GetText("button_title/yes"),
+                        Action = () =>
+                        {
+                            action?.Invoke();
+                        },
+                        Color = color
+                    },
+                    new TextButtonSettings
+                    {
+                        Title = LocalizationProvider.GetText("button_title/no"),
+                        Action = () =>
+                        {
+                            Application.PopupViewManager.HideCurrentPopup();
+                        },
+                        Color = color
+                    }
+                },
+                IgnoreOverlayButtonAction = true,
+                Color = color
             });
         }
     }
