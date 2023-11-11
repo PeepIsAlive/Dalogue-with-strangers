@@ -91,6 +91,7 @@ namespace Extensions
                         Action = () =>
                         {
                             action?.Invoke();
+                            Application.PopupViewManager.HideCurrentPopup();
                         },
                         Color = color
                     },

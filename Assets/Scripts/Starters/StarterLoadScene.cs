@@ -1,7 +1,5 @@
 using UnityEngine.Localization.Settings;
-using Unity.Services.Analytics;
 using System.Threading.Tasks;
-using Unity.Services.Core;
 using Localization;
 using UnityEngine;
 using Settings;
@@ -60,15 +58,13 @@ namespace Starters
             }
         }
 
-        private async void Awake()
+        private void Awake()
         {
 #if !UNITY_EDITOR && (UNITY_ANDROID || UNITY_IOS)
             Application.targetFrameRate = 60;
 #endif
             _settings = SettingsProvider.Get<BackgroundsSettings>();
             _background.sprite = _settings.GetRandomBackground();
-
-            await UnityServices.InitializeAsync();
         }
 
         private async void Start()

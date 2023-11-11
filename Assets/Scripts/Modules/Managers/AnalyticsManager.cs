@@ -1,6 +1,8 @@
 using Application = Live_2D.Application;
 using System.Collections.Generic;
 using Unity.Services.Analytics;
+using System.Threading.Tasks;
+using Unity.Services.Core;
 using Localization;
 using UnityEngine;
 using UI.Settings;
@@ -18,8 +20,10 @@ namespace Modules.Managers
         private const string SEND_MESSAGE_EVENT = "sendMessage";
         private bool _isInitialized;
 
-        public void Initialize()
+        public async Task Initialize()
         {
+            await UnityServices.InitializeAsync();
+
             if (_isInitialized)
                 return;
 #if !UNITY_EDITOR
@@ -29,7 +33,6 @@ namespace Modules.Managers
             {
                 EventSystem.Subscribe<OnMessageSendEvent>(OnMessageSend);
                 AnalyticsService.Instance.StartDataCollection();
-                
             });
 #endif
             _isInitialized = true;
