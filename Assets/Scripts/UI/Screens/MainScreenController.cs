@@ -100,7 +100,7 @@ namespace UI.Controllers
             InputField.interactable = false;
         }
 
-        private async void Start()
+        private void Start()
         {
             _npcCommonSettings = SettingsProvider.Get<NpcCommonSettings>();
 
@@ -118,7 +118,7 @@ namespace UI.Controllers
             });
 
             EventSystem.Subscribe<OnTriggerEvent>(TurnOffInputFieldInteractable);
-            await AnalyticsManager.Instance.Initialize();
+            AnalyticsManager.Instance.Initialize();
         }
 
         private void OnDestroy()

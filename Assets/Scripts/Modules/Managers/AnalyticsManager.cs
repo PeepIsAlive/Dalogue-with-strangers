@@ -1,15 +1,10 @@
 using Application = Live_2D.Application;
 using System.Collections.Generic;
 using Unity.Services.Analytics;
-using System.Threading.Tasks;
-using Unity.Services.Core;
-using Localization;
 using UnityEngine;
-using UI.Settings;
 using Extensions;
 using Settings;
 using Events;
-using UI;
 
 namespace Modules.Managers
 {
@@ -20,12 +15,11 @@ namespace Modules.Managers
         private const string SEND_MESSAGE_EVENT = "sendMessage";
         private bool _isInitialized;
 
-        public async Task Initialize()
+        public void Initialize()
         {
-            await UnityServices.InitializeAsync();
-
             if (_isInitialized)
                 return;
+
 #if !UNITY_EDITOR
             var npcCommonSettings = SettingsProvider.Get<NpcCommonSettings>();
 
@@ -63,10 +57,8 @@ namespace Modules.Managers
 
         private void OnDestroy()
         {
-#if !UNITY_EDITOR
             EventSystem.Unsubscribe<OnMessageSendEvent>(OnMessageSend);
             AnalyticsService.Instance.StopDataCollection();
-#endif
         }
     }
 }

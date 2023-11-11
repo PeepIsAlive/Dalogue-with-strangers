@@ -7,6 +7,7 @@ using Modules;
 using Scenes;
 using Saves;
 using Core;
+using Unity.Services.Core;
 
 namespace Starters
 {
@@ -58,13 +59,15 @@ namespace Starters
             }
         }
 
-        private void Awake()
+        private async void Awake()
         {
 #if !UNITY_EDITOR && (UNITY_ANDROID || UNITY_IOS)
             Application.targetFrameRate = 60;
 #endif
             _settings = SettingsProvider.Get<BackgroundsSettings>();
             _background.sprite = _settings.GetRandomBackground();
+
+            await UnityServices.InitializeAsync();
         }
 
         private async void Start()
