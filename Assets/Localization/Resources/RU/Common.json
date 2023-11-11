@@ -1,0 +1,17 @@
+[
+    { "tags": ["button_title", "cancel"], "topic": "Отмена" },
+    { "tags": ["button_title", "close"], "topic": "Закрыть" },
+    { "tags": ["button_title", "yes"], "topic": "Да" },
+    { "tags": ["button_title", "no"], "topic": "Нет" },
+
+    { "tags": ["popup_title", "change_npc"], "topic": "Смена собеседника" },
+    { "tags": ["popup_title", "data_collection"], "topic": "Сбор данных" },
+
+    { "tags": ["popup_content", "change_npc"], "topic": "Выбери собеседника с которым хотел бы пообщаться" },
+    { "tags": ["popup_content", "data_collection"], "topic": "Мы собираемся собирать ваши данные внутри игры, что вы на это скажете?" },
+
+    { "tags": ["popup_title", "menu"], "topic": "Меню" },
+    { "tags": ["toggle_vibrations", "menu"], "topic": "Вибрация" },
+    { "tags": ["toggle_sound", "menu"], "topic": "Звуковые эффекты" },
+    { "tags": ["button_title", "save"], "topic": "Сохранить изменения" },
+]

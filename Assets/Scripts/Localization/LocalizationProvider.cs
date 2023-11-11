@@ -58,6 +58,9 @@ namespace Localization
 
         private static async Task Setup(Locale locale)
         {
+            if (_localizationFiles.Any())
+                _localizationFiles.Clear();
+
             await LoadLocalization(locale);
         }
 
