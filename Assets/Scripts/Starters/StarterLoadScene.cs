@@ -1,13 +1,15 @@
 using UnityEngine.Localization.Settings;
 using System.Threading.Tasks;
+using Localization.Metadata;
+using Unity.Services.Core;
 using Localization;
 using UnityEngine;
+using System.Linq;
 using Settings;
 using Modules;
 using Scenes;
 using Saves;
 using Core;
-using Unity.Services.Core;
 
 namespace Starters
 {
@@ -31,9 +33,7 @@ namespace Starters
             if (string.IsNullOrEmpty(presetId))
                 presetId = SettingsProvider.Get<NpcCommonSettings>().GetPreset(NpcType.Natori).Id;
 
-            SetSettingsStates();
-
-            await LocalizationProvider.Initialize(LocalizationSettings.ProjectLocale);
+            await SetSettingsStates(GetSettingsStates());
             await LoadMainScene(presetId);
         }
 
@@ -42,21 +42,34 @@ namespace Starters
             var operation = Main.LoadScene(presetId);
             operation.allowSceneActivation = false;
 
-            await Task.Delay(8000);
+            await Task.Yield();
 
             operation.allowSceneActivation = true;
         }
 
-        private void SetSettingsStates()
+        private SettingsSaveData GetSettingsStates()
         {
+            var settingsStates = new SettingsSaveData();
+
             if (SaveDataManager.HasSave(SaveDataManager.SETTINGS_KEY))
             {
                 SaveDataManager.LoadSave<SettingsSaveData>(SaveDataManager.SETTINGS_KEY, saveData =>
                 {
-                    HapticProvider.SetState(saveData.HapticState);
-                    SoundProvider.SetState(saveData.SoundState);
+                    settingsStates = saveData;
                 });
             }
+
+            return settingsStates;
+        }
+
+        private async Task SetSettingsStates(SettingsSaveData settingsSaveData)
+        {
+            LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales
+                .First(l => l.Metadata.GetMetadata<SystemLanguageMetadata>().SystemLanguage == settingsSaveData.Language);
+            HapticProvider.SetState(settingsSaveData.HapticState);
+            SoundProvider.SetState(settingsSaveData.SoundState);
+
+            await LocalizationProvider.Initialize(LocalizationSettings.SelectedLocale);
         }
 
         private async void Awake()

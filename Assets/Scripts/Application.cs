@@ -1,4 +1,5 @@
 using Modules.Managers;
+using UI.Controllers;
 using UnityEngine;
 using Controllers;
 using Core;
@@ -22,6 +23,10 @@ namespace Live_2D
                 var npcController = Object.FindObjectOfType<NpcController>();
                 return npcController != null ? npcController.NpcType : NpcType.Cat;
             }
+        }
+        public static DropdownController DropdownController
+        {
+            get => Object.FindObjectOfType<DropdownController>();
         }
 
         static Application()

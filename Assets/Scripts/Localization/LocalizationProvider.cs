@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine.Localization;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+using UI.Controllers;
 using System.Linq;
 using UnityEngine;
 using Settings;
@@ -53,6 +54,7 @@ namespace Localization
 
         public static async Task Initialize(Locale locale)
         {
+            LocalizationSettings.SelectedLocaleChanged += OnSelectedLocaleChanged;
             await Setup(locale);
         }
 
@@ -111,6 +113,15 @@ namespace Localization
         private static string GetFileDataKey(string entryName, long entryId)
         {
             return string.Join("/", new string[] { entryName, entryId.ToString() });
+        }
+
+        private static void OnSelectedLocaleChanged(Locale locale)
+        {
+            FadeController.Instance.FadeOn(async () =>
+            {
+                await Setup(locale);
+                FadeController.Instance.FadeOff();
+            });
         }
     }
 }

@@ -1,17 +1,19 @@
 [
-    { "tags": ["button_title", "cancel"], "topic": "Отмена" },
-    { "tags": ["button_title", "close"], "topic": "Закрыть" },
-    { "tags": ["button_title", "yes"], "topic": "Да" },
-    { "tags": ["button_title", "no"], "topic": "Нет" },
+    { "tags": ["button_title", "cancel"], "topic": "РћС‚РјРµРЅР°" },
+    { "tags": ["button_title", "close"], "topic": "Р—Р°РєСЂС‹С‚СЊ" },
+    { "tags": ["button_title", "yes"], "topic": "Р”Р°" },
+    { "tags": ["button_title", "no"], "topic": "РќРµС‚" },
 
-    { "tags": ["popup_title", "change_npc"], "topic": "Смена собеседника" },
-    { "tags": ["popup_title", "data_collection"], "topic": "Сбор данных" },
+    { "tags": ["dropdown_title", "language"], "topic": "РЇР·С‹Рє" },
 
-    { "tags": ["popup_content", "change_npc"], "topic": "Выбери собеседника с которым хотел бы пообщаться" },
-    { "tags": ["popup_content", "data_collection"], "topic": "Мы собираемся собирать ваши данные внутри игры, что вы на это скажете?" },
+    { "tags": ["popup_title", "change_npc"], "topic": "РЎРјРµРЅР° СЃРѕР±РµСЃРµРґРЅРёРєР°" },
+    { "tags": ["popup_title", "data_collection"], "topic": "РЎР±РѕСЂ РґР°РЅРЅС‹С…" },
 
-    { "tags": ["popup_title", "menu"], "topic": "Меню" },
-    { "tags": ["toggle_vibrations", "menu"], "topic": "Вибрация" },
-    { "tags": ["toggle_sound", "menu"], "topic": "Звуковые эффекты" },
-    { "tags": ["button_title", "save"], "topic": "Сохранить изменения" },
+    { "tags": ["popup_content", "change_npc"], "topic": "Р’С‹Р±РµСЂРё СЃРѕР±РµСЃРµРґРЅРёРєР° СЃ РєРѕС‚РѕСЂС‹Рј С…РѕС‚РµР» Р±С‹ РїРѕРѕР±С‰Р°С‚СЊСЃСЏ" },
+    { "tags": ["popup_content", "data_collection"], "topic": "РњС‹ СЃРѕР±РёСЂР°РµРјСЃСЏ СЃРѕР±РёСЂР°С‚СЊ РІР°С€Рё РґР°РЅРЅС‹Рµ РІРЅСѓС‚СЂРё РёРіСЂС‹, С‡С‚Рѕ РІС‹ РЅР° СЌС‚Рѕ СЃРєР°Р¶РµС‚Рµ?" },
+
+    { "tags": ["popup_title", "menu"], "topic": "РњРµРЅСЋ" },
+    { "tags": ["toggle_vibrations", "menu"], "topic": "Р’РёР±СЂР°С†РёРё" },
+    { "tags": ["toggle_sound", "menu"], "topic": "Р—РІСѓРєРѕРІС‹Рµ СЌС„С„РµРєС‚С‹" },
+    { "tags": ["button_title", "save"], "topic": "РЎРѕС…СЂР°РЅРёС‚СЊ РёР·РјРµРЅРµРЅРёСЏ" },
 ]
