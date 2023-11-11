@@ -57,8 +57,10 @@ namespace Modules.Managers
 
         private void OnDestroy()
         {
+#if !UNITY_EDITOR
             EventSystem.Unsubscribe<OnMessageSendEvent>(OnMessageSend);
             AnalyticsService.Instance.StopDataCollection();
+#endif
         }
     }
 }
