@@ -74,14 +74,9 @@ namespace Starters
         private async void Awake()
         {
             LoadSceneProcessor.Instance.InvokeLoadAction();
-            AnalyticsManager.OnStart();
+            AnalyticsManager.Instance.Initialize();
 
             await Initialize();
-        }
-
-        private void OnDestroy()
-        {
-            AnalyticsManager.OnDestroy();
         }
     }
 }

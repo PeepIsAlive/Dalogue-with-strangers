@@ -1,28 +1,26 @@
 using System.Collections.Generic;
 using Unity.Services.Analytics;
+using UnityEngine;
 using Events;
 
 namespace Modules.Managers
 {
-    public static class AnalyticsManager
+    public sealed class AnalyticsManager : MonoBehaviour
     {
+        public static AnalyticsManager Instance { get; private set; }
+
         private const string SEND_MESSAGE_EVENT = "sendMessage";
+        private bool _isInitialized;
 
-        public static void OnStart()
+        public void Initialize()
         {
+            if (_isInitialized)
+                return;
 #if !UNITY_EDITOR
-
             EventSystem.Subscribe<OnMessageSendEvent>(OnMessageSend);
             AnalyticsService.Instance.StartDataCollection();
 #endif
-        }
-
-        public static void OnDestroy()
-        {
-#if !UNITY_EDITOR
-            EventSystem.Unsubscribe<OnMessageSendEvent>(OnMessageSend);
-            AnalyticsService.Instance.StopDataCollection();
-#endif
+            _isInitialized = true;
         }
 
         private static void OnMessageSend(OnMessageSendEvent data)
@@ -32,6 +30,28 @@ namespace Modules.Managers
                 { "Message", data.Message },
                 { "NpcType", data.NpcType }
             });
+        }
+
+        private void Awake()
+        {
+            if (Instance == null)
+            {
+                Instance = this;
+            }
+            else if (Instance == this)
+            {
+                Destroy(gameObject);
+            }
+
+            DontDestroyOnLoad(gameObject);
+        }
+
+        private void OnDestroy()
+        {
+#if !UNITY_EDITOR
+            EventSystem.Unsubscribe<OnMessageSendEvent>(OnMessageSend);
+            AnalyticsService.Instance.StopDataCollection();
+#endif
         }
     }
 }
