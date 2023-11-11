@@ -73,7 +73,6 @@ namespace Starters
 
         private async void Start()
         {
-            AnalyticsService.Instance.StartDataCollection();
             await Initialize();
         }
     }

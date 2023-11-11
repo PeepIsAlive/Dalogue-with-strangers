@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using UnityEngine.Analytics;
+using Unity.Services.Analytics;
 using Events;
 
 namespace Modules.Managers
@@ -12,10 +12,8 @@ namespace Modules.Managers
         {
 #if !UNITY_EDITOR
 
-            Analytics.enabled = true;
-
-            Analytics.EnableCustomEvent(SEND_MESSAGE_EVENT, true);
             EventSystem.Subscribe<OnMessageSendEvent>(OnMessageSend);
+            AnalyticsService.Instance.StartDataCollection();
 #endif
         }
 
@@ -23,12 +21,13 @@ namespace Modules.Managers
         {
 #if !UNITY_EDITOR
             EventSystem.Unsubscribe<OnMessageSendEvent>(OnMessageSend);
+            AnalyticsService.Instance.StopDataCollection();
 #endif
         }
 
         private static void OnMessageSend(OnMessageSendEvent data)
         {
-            Analytics.SendEvent(SEND_MESSAGE_EVENT, new Dictionary<string, object>
+            AnalyticsService.Instance.CustomData(SEND_MESSAGE_EVENT, new Dictionary<string, object>
             {
                 { "Message", data.Message },
                 { "NpcType", data.NpcType }
