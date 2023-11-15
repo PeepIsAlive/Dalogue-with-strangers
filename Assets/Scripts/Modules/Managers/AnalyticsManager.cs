@@ -5,14 +5,13 @@ using UnityEngine;
 using Extensions;
 using Settings;
 using Events;
+using Utils;
 
 namespace Modules.Managers
 {
     public sealed class AnalyticsManager : MonoBehaviour
     {
         public static AnalyticsManager Instance { get; private set; }
-
-        private const string SEND_MESSAGE_EVENT = "sendMessage";
         private bool _isInitialized;
 
         public void Initialize()
@@ -34,7 +33,7 @@ namespace Modules.Managers
 
         private static void OnMessageSend(OnMessageSendEvent data)
         {
-            AnalyticsService.Instance.CustomData(SEND_MESSAGE_EVENT, new Dictionary<string, object>
+            AnalyticsService.Instance.CustomData(AnalyticsUtils.ToString(AnalyticsEvents.SendMessage), new Dictionary<string, object>
             {
                 { "Message", data.Message },
                 { "NpcType", data.NpcType }
@@ -62,5 +61,11 @@ namespace Modules.Managers
             AnalyticsService.Instance.StopDataCollection();
 #endif
         }
+    }
+
+
+    public enum AnalyticsEvents
+    {
+        SendMessage = 0,
     }
 }
