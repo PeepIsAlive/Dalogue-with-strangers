@@ -65,7 +65,8 @@ namespace Starters
 
                     EventSystem.Send(new OnTriggerEvent
                     {
-                        TriggerType = triggerType
+                        TriggerType = triggerType,
+                        NpcType = controller.NpcType
                     });
                 });
             }

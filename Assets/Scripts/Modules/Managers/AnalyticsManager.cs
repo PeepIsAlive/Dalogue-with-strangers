@@ -25,6 +25,8 @@ namespace Modules.Managers
             PopupExtensions.ShowDataCollectionPopup(npcCommonSettings.GetPreset(Application.CurrentNpcType).NpcColor, () =>
             {
                 EventSystem.Subscribe<OnMessageSendEvent>(OnMessageSend);
+                EventSystem.Subscribe<OnTriggerEvent>(OnTriggerEvent);
+
                 AnalyticsService.Instance.StartDataCollection();
             });
 #endif
@@ -36,6 +38,15 @@ namespace Modules.Managers
             AnalyticsService.Instance.CustomData(AnalyticsUtils.ToString(AnalyticsEvents.SendMessage), new Dictionary<string, object>
             {
                 { "Message", data.Message },
+                { "NpcType", data.NpcType }
+            });
+        }
+
+        private static void OnTriggerEvent(OnTriggerEvent data)
+        {
+            AnalyticsService.Instance.CustomData(AnalyticsUtils.ToString(AnalyticsEvents.OnTrigger), new Dictionary<string, object>
+            {
+                { "TriggerType", data.TriggerType },
                 { "NpcType", data.NpcType }
             });
         }
@@ -58,6 +69,8 @@ namespace Modules.Managers
         {
 #if !UNITY_EDITOR
             EventSystem.Unsubscribe<OnMessageSendEvent>(OnMessageSend);
+            EventSystem.Unsubscribe<OnTriggerEvent>(OnTriggerEvent);
+
             AnalyticsService.Instance.StopDataCollection();
 #endif
         }
@@ -67,5 +80,6 @@ namespace Modules.Managers
     public enum AnalyticsEvents
     {
         SendMessage = 0,
+        OnTrigger = 1,
     }
 }
