@@ -117,10 +117,7 @@ namespace Localization
 
         private static void OnSelectedLocaleChanged(Locale locale)
         {
-            if (FadeController.Instance == null)
-                return;
-
-            FadeController.Instance.FadeOn(async () =>
+            FadeController.Instance?.FadeOn(async () =>
             {
                 await Setup(locale);
                 FadeController.Instance.FadeOff();
