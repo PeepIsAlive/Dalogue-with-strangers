@@ -11,7 +11,6 @@ using Modules;
 using System;
 using Saves;
 using UI;
-using Controllers;
 
 namespace Extensions
 {
@@ -23,8 +22,11 @@ namespace Extensions
             var languages = new List<string>
             {
                 SystemLanguage.Russian.ToString(),
-                SystemLanguage.English.ToString()
+                SystemLanguage.English.ToString(),
+                SystemLanguage.Turkish.ToString()
             };
+
+            languages.Remove(currentLanguage);
 
             Application.PopupViewManager.Show(new MenuPopup
             {
@@ -89,11 +91,15 @@ namespace Extensions
                         {
                             new OptionData
                             {
-                                text = languages.First(x => x == currentLanguage)
+                                text = currentLanguage
                             },
                             new OptionData
                             {
-                                text = languages.First(x => x != currentLanguage)
+                                text = languages.First()
+                            },
+                            new OptionData
+                            {
+                                text = languages.Last()
                             }
                         }
                     },
