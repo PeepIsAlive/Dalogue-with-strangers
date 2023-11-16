@@ -64,8 +64,8 @@ namespace Starters
 
         private async Task SetSettingsStates(SettingsSaveData settingsSaveData)
         {
-            //LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales
-            //    .First(l => l.Metadata.GetMetadata<SystemLanguageMetadata>().SystemLanguage == settingsSaveData.Language);
+            LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales
+                .First(l => l.Metadata.GetMetadata<SystemLanguageMetadata>().SystemLanguage == settingsSaveData.Language);
             HapticProvider.SetState(settingsSaveData.HapticState);
             SoundProvider.SetState(settingsSaveData.SoundState);
 
