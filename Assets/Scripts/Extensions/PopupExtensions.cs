@@ -122,7 +122,7 @@ namespace Extensions
             });
         }
 
-        public static void ShowDataCollectionPopup(Color? color, Action action)
+        public static void ShowDataCollectionPopup(Color? color, Action yesAction)
         {
             Application.PopupViewManager.Show(new DefaultPopup
             {
@@ -135,7 +135,9 @@ namespace Extensions
                         Title = LocalizationProvider.GetText("button_title/yes"),
                         Action = () =>
                         {
-                            action?.Invoke();
+                            yesAction?.Invoke();
+
+                            SaveDataManager.Save(SaveDataManager.DATA_COLLECTION_KEY, true);
                             Application.PopupViewManager.HideCurrentPopup();
                         },
                         Color = color
@@ -145,6 +147,7 @@ namespace Extensions
                         Title = LocalizationProvider.GetText("button_title/no"),
                         Action = () =>
                         {
+                            SaveDataManager.Save(SaveDataManager.DATA_COLLECTION_KEY, false);
                             Application.PopupViewManager.HideCurrentPopup();
                         },
                         Color = color

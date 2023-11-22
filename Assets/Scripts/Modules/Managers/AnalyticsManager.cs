@@ -5,7 +5,9 @@ using UnityEngine;
 using Extensions;
 using Settings;
 using Events;
+using System;
 using Utils;
+using Saves;
 
 namespace Modules.Managers
 {
@@ -21,15 +23,28 @@ namespace Modules.Managers
 
 #if !UNITY_EDITOR
             var npcCommonSettings = SettingsProvider.Get<NpcCommonSettings>();
-
-            PopupExtensions.ShowDataCollectionPopup(npcCommonSettings.GetPreset(Application.CurrentNpcType).NpcColor, () =>
+            Action startDataCollectionAction = () =>
             {
                 EventSystem.Subscribe<OnMessageSendEvent>(OnMessageSend);
                 EventSystem.Subscribe<OnTriggerEvent>(OnTriggerEvent);
 
                 AnalyticsService.Instance.StartDataCollection();
-            });
+            };
+
+            if (SaveDataManager.HasSave(SaveDataManager.DATA_COLLECTION_KEY))
+            {
+                SaveDataManager.LoadSave<bool>(SaveDataManager.DATA_COLLECTION_KEY, dataCollectionAnswer =>
+                {
+                    if (dataCollectionAnswer)
+                        startDataCollectionAction?.Invoke();
+                });
+            }
+            else
+            {
+                PopupExtensions.ShowDataCollectionPopup(npcCommonSettings.GetPreset(Application.CurrentNpcType).NpcColor, startDataCollectionAction);
+            }
 #endif
+
             _isInitialized = true;
         }
 
