@@ -74,13 +74,13 @@ namespace Starters
 
         private async void Awake()
         {
-#if !UNITY_EDITOR && (UNITY_ANDROID || UNITY_IOS)
+            await UnityServices.InitializeAsync();
+
+#if !UNITY_EDITOR
             Application.targetFrameRate = 60;
 #endif
             _settings = SettingsProvider.Get<BackgroundsSettings>();
             _background.sprite = _settings.GetRandomBackground();
-
-            await UnityServices.InitializeAsync();
         }
 
         private async void Start()
