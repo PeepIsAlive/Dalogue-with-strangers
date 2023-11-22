@@ -1,4 +1,4 @@
-using Application = Live_2D.Application;
+using Application = DWS.Application;
 using UI.Controllers;
 using UnityEngine;
 using Settings;

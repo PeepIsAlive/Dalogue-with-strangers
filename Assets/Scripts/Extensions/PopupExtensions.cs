@@ -1,4 +1,4 @@
-using Application = Live_2D.Application;
+using Application = DWS.Application;
 using UnityEngine.Localization.Settings;
 using System.Collections.Generic;
 using static TMPro.TMP_Dropdown;
