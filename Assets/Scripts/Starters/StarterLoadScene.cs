@@ -42,7 +42,7 @@ namespace Starters
             var operation = Main.LoadScene(presetId);
             operation.allowSceneActivation = false;
 
-            await Task.Delay(7000);
+            await Task.Delay(8000);
 
             operation.allowSceneActivation = true;
         }
