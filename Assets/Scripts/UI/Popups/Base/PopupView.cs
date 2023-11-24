@@ -1,4 +1,4 @@
-using Application = Live_2D.Application;
+using Application = DWS.Application;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UI.Controllers;

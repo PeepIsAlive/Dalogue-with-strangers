@@ -8,6 +8,7 @@ namespace Modules
 {
     public static class SaveDataManager
     {
+        public const string DATA_COLLECTION_KEY = "data_collection";
         public const string NPC_PRESET_KEY = "npc_preset_id";
         public const string SETTINGS_KEY = "settings";
 

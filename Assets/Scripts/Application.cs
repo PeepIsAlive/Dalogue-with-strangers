@@ -4,7 +4,7 @@ using UnityEngine;
 using Controllers;
 using Core;
 
-namespace Live_2D
+namespace DWS
 {
     public static class Application
     {
