@@ -13,6 +13,10 @@ Unity version: `2021.3.14f1`
 - Manifestation of empathy: You develop the ability to listen and understand others, which allows you to better understand their point of view and reach mutual understanding.
 - Cats for every taste: In the process of communication, you will be able to see the cats of your interlocutors, each of which has its own unique character and features.
 
+<p align="center">
+  <img src="./ForReadMe/gameplay.gif" alt="animated" />
+</p>
+
 ## Technologies
 
 - `Inworld`
