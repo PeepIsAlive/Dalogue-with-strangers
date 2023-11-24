@@ -1,0 +1,19 @@
+[
+    { "tags": ["button_title", "cancel"], "topic": "Cancel" },
+    { "tags": ["button_title", "close"], "topic": "Close" },
+    { "tags": ["button_title", "yes"], "topic": "Yes" },
+    { "tags": ["button_title", "no"], "topic": "No" },
+
+    { "tags": ["dropdown_title", "language"], "topic": "Language" },
+
+    { "tags": ["popup_title", "change_npc"], "topic": "Changing npcs" },
+    { "tags": ["popup_title", "data_collection"], "topic": "Data collection" },
+
+    { "tags": ["popup_content", "change_npc"], "topic": "Choose the NPC you want to chat with?" },
+    { "tags": ["popup_content", "data_collection"], "topic": "We are going to collect your data inside the game, what do you say to that?" },
+
+    { "tags": ["popup_title", "menu"], "topic": "Menu" },
+    { "tags": ["toggle_vibrations", "menu"], "topic": "Vibrations" },
+    { "tags": ["toggle_sound", "menu"], "topic": "Sound effects" },
+    { "tags": ["button_title", "save"], "topic": "Save changes" },
+]

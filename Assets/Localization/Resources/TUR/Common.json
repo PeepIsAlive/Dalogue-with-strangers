@@ -1,0 +1,19 @@
+﻿[
+    { "tags": ["button_title", "cancel"], "topic": "Iptal etmek" },
+    { "tags": ["button_title", "close"], "topic": "Kapat" },
+    { "tags": ["button_title", "yes"], "topic": "Evet" },
+    { "tags": ["button_title", "no"], "topic": "Hayır" },
+
+    { "tags": ["dropdown_title", "language"], "topic": "Dil" },
+
+    { "tags": ["popup_title", "change_npc"], "topic": "Npc'leri değiştirme" },
+    { "tags": ["popup_title", "data_collection"], "topic": "Veri toplama" },
+
+    { "tags": ["popup_content", "change_npc"], "topic": "Sohbet etmek istediğiniz npc'yi seçin?" },
+    { "tags": ["popup_content", "data_collection"], "topic": "Verilerinizi oyun içinde toplayacağız, buna ne diyorsunuz?" },
+
+    { "tags": ["popup_title", "menu"], "topic": "Menü" },
+    { "tags": ["toggle_vibrations", "menu"], "topic": "Titreşimler" },
+    { "tags": ["toggle_sound", "menu"], "topic": "Ses efektleri" },
+    { "tags": ["button_title", "save"], "topic": "Değişiklikleri kaydet" },
+]
